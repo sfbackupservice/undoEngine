@@ -1,13 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UndoEngine</title>
-
+    <title>Salesforce Undo Engine</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    red text
+
+    <header class="hero">
+        <div class="container">
+            <div class="badge">Salesforce Data Recovery Platform</div>
+            <h1>Transactional Undo Engine<br>for Salesforce</h1>
+            <p class="hero-sub">
+                A storage-efficient, Flow-first undo engine for Salesforce that safely rolls back data changes — from individual fields to massive record sets containing millions of records — without object explosion or developer overhead.
+                <div class="hero-buttons">
+                    <a class="primary-btn" href="#features">Explore Features</a>
+                    <a class="secondary-btn" href="#comparison">Platform Comparison</a>
+                </div>
+        </div>
+    </header>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="section dark">
+        <div class="container narrow">
+            <h2>Key Advantages</h2>
+            <div class="adv-grid"><div class="adv-card fade-in">
+                <h3>Compact History Architecture</h3>
+                <p>Unlike field-per-change trackers, we store the entire history of a record in a single compact JSON structure — dramatically reducing storage usage and allowing the system to scale safely to millions of updates.</p>
+            </div>
+            
+            <div class="adv-card fade-in">
+                <h3>Flow-First Configuration</h3>
+                <p>Admins can enable UndoEngine for any standard or custom object in less then two minutes using generic Flow templates — no Apex required.</p>
+            </div>
+            
+            <div class="adv-card fade-in">
+                <h3>Flexible Tracking</h3>
+                <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
+            </div>
+            
+            <div class="adv-card fade-in">
+                <h3>Full Control</h3>
+                <p>Configure everything from the UI — history length, number of tracked fields, async mode, batch sizes, and more.</p>
+            </div>
+
+            <div class="adv-card fade-in">
+                <h3>Custom List View</h3>
+                <p>
+                    Unlike standard Salesforce List Views, this feature emulates List View behavior, bypassing platform limits. Includes a powerful SOQL-based filter engine and an exclusive <span class="feature-highlight">Geolocation</span> filter with special operators.                
+                </p>
+            </div>
+
+            <div class="adv-card fade-in">
+                <h3>Thoughtful UX Design</h3>
+                <p>
+                    UndoEngine prioritizes user experience with contextual tooltips and help texts throughout the interface. Data is displayed according to each user’s Salesforce locale, respecting date/time formats and time zones. Hover over values to see the exact UTC format stored in JSON — ensuring clarity for users and transparency for admins.                
+                </p>
+            </div>
+            <div class="adv-card fade-in">
+                <h3>Built for Salesforce Scale</h3>
+                <p>
+                UndoEngine is designed to operate safely at enterprise scale. Asynchronous processing, configurable batch sizes and optimized history storage ensure reliable performance even with millions of record updates. The architecture respects Salesforce governor limits while providing powerful recovery and auditing capabilities for administrators.
+                </p>
+            </div>
+            <div class="adv-card fade-in">
+                <h3>Built-in Documentation & Tutorial</h3>
+                <p>
+                    UndoEngine comes with comprehensive built-in documentation right inside the package. All features, settings, and instructions are well-structured and easily accessible via a dedicated left-hand tab, making it simple for users and administrators to get started without needing external resources.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Main Features</h2>
+
+            <div class="two-col fade-in">
+                <img src="images/history-viewer.png" alt="Record History Viewer" class="product-image small">
+                <div>
+                    <h3>Record History Viewer</h3>
+                    <ul class="checklist">
+                        <li>Field-by-field navigation</li>
+                        <li>User & date filters</li>
+                        <li>Rollback single field or full record</li>
+                        <li>Interactive arrows for history timeline</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="two-col reverse fade-in">
+                <img src="images/mass-undo.png" alt="Record History Viewer" class="product-image large">
+                <div>
+                    <h3>Mass Update Interface</h3>
+                    <ul class="checklist">
+                        <li>Custom list view engine bypassing standard Salesforce limits</li>
+                        <li>Bulk undo operations with CSV audit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="two-col fade-in">
+                <img src="images/settings-page.png" alt="Record History Viewer" class="product-image large">
+                <div>
+                    <h3>Settings UI</h3>
+                    <ul class="checklist">
+                        <li>Custom error logs</li>
+                        <li>Notifications on failures</li>
+                        <li>Sync/async control</li>
+                        <li>Batch size control</li>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section dark">
+        <div class="container">
+            <h2>Platform Comparison</h2>
+            <table class="comparison fade-in">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Field History</th>
+                        <th>Typical AppExchange Tools</th>
+                        <th class="highlight-col">UndoEngine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>True Data Rollback</td>
+                        <td>❌</td>
+                        <td>Partial</td>
+                        <td class="highlight-col"><strong>✔ Full rollback</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Storage Efficiency</td>
+                        <td>Low</td>
+                        <td>Low</td>
+                        <td class="highlight-col"><strong>✔ Compact JSON history</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Field-Level Recovery</td>
+                        <td>❌</td>
+                        <td>Limited</td>
+                        <td class="highlight-col"><strong>✔ Yes</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Flow-first Configuration</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td class="highlight-col"><strong>✔ Ready-to-use Flow</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Timezone Correctness</td>
+                        <td>Basic</td>
+                        <td>Often Broken</td>
+                        <td class="highlight-col"><strong>✔ Enterprise-grade</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Managed Package Debugging</td>
+                        <td>Native</td>
+                        <td>❌</td>
+                        <td class="highlight-col"><strong>✔ Built-in Debug</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Mass Update Recovery</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td class="highlight-col"><strong>✔ Premium</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Product Editions Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Product Editions</h2>
+            <table class="comparison fade-in">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Standard (220$)</th>
+                        <th class="highlight-col">Premium (480$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Project Documentation</td>
+                        <td>✔ README built-in</td>
+                        <td class="highlight-col">✔ README built-in</td>
+                    </tr>
+                    <tr>
+                        <td>Organization Level Settings</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Error Logging</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Error Notifications</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Batch Processing Configuration</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Single Record History Viewer</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Field History Navigation</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>History Filters (User / Date)</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Field / Record Rollback</td>
+                        <td>✔</td>
+                        <td class="highlight-col">✔</td>
+                    </tr>
+                    <tr>
+                        <td>Mass Update Recovery</td>
+                        <td>—</td>
+                        <td class="highlight-col"><strong>✔</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Custom List View Engine</td>
+                        <td>—</td>
+                        <td class="highlight-col"><strong>✔</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Bulk Undo Operations</td>
+                        <td>—</td>
+                        <td class="highlight-col"><strong>✔</strong></td>
+                    </tr>
+                    <tr>
+                        <td>User Level Settings</td>
+                        <td>—</td>
+                        <td class="highlight-col"><strong>✔</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Live Demo -->
+    <section class="section dark">
+        <div class="container narrow">
+            <h2>Live Product Demo</h2>
+            <p class="lead">See how quickly you can connect any object tracking — under 1.5 minute!</p>
+            <video class="video-demo large" controls>
+                <source src="video/config-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    
+    <section class="section demo-request-section">
+        <div class="container narrow">
+    
+            <h2>Install UndoEngine Package</h2>
+    
+            <p>
+                Choose the appropriate installation link depending on your Salesforce environment.
+                Use the Production link for production or developer orgs, and the Sandbox link for sandbox orgs.
+            </p>
+    
+            <!-- Production -->
+            <div class="install-block">
+                <h3>Production / Developer Org</h3>
+    
+                <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JFN"
+                   target="_blank"
+                   class="primary-btn">
+                   Open Production Installation
+                </a>
+    
+                <p>
+                    Installation URL:
+                    <span id="sandbox-url" class="feature-highlight allow-select">
+                        https://login.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JFN
+                    </span>
+                </p>
+    
+                <button class="secondary-btn copy-btn" onclick="copyProdURL()">
+                    Copy Production URL
+                </button>
+            </div>
+    
+            <!-- Sandbox -->
+            <div class="install-block">
+                <h3>Sandbox Org</h3>
+    
+                <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JFN"
+                   target="_blank"
+                   class="primary-btn">
+                   Open Sandbox Installation
+                </a>
+    
+                <p>
+                    Installation URL:
+                    <span id="sandbox-url" class="feature-highlight allow-select">
+                        https://test.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JFN
+                    </span>
+                        
+                </p>
+    
+                <button class="secondary-btn copy-btn" onclick="copySandboxURL()">
+                    Copy Sandbox URL
+                </button>
+            </div>
+    
+            <hr>
+    
+            <h2>Activate Your Package</h2>
+    
+            <p>
+                After installing the package, please send an email to activate your access.
+            </p>
+    
+            <p>
+                Email: <span id="email-text" class="feature-highlight allow-select">sfbackupservice@gmail.com</span>
+            </p>
+    
+            <button class="primary-btn" onclick="copyEmail()">
+                Copy Email
+            </button>
+    
+            <p>Please include the following information in your email:</p>
+    
+            <ul>
+                <li><strong>Requested Access Level</strong> – Trial (1-day free), Standard, or Premium</li>
+                <li><strong>Organization Name</strong></li>
+                <li><strong>Organization ID</strong></li>
+                <li><strong>Organization URL</strong></li>
+            </ul>
+    
+            <p class="note">
+                Providing this information allows us to activate your package quickly.
+            </p>
+    
+        </div>
+    </section>
+
+    <footer>
+        <div class="container narrow">
+            <h3>Salesforce Data Recovery Layer</h3>
+            <p>Enterprise-grade undo engine for safe Salesforce data operations.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
+
 </html>

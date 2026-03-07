@@ -1,3 +1,360 @@
 body {
-    color: red;
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #0b0d12;
+    color: #e6e8ee;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+h2{
+    text-align: center;
+}
+
+.allow-select{
+    user-select: text;
+}
+
+/* Global container with automatic side padding */
+
+.container {
+    width: 1200px;
+    max-width: 92%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container.narrow {
+    max-width: 850px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.hero {
+    padding: 140px 20px;
+    text-align: center;
+    background: radial-gradient(circle at top, #1a1d26, #0b0d12);
+}
+
+.badge {
+    display: inline-block;
+    background: #1f2430;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-sub {
+    font-size: 20px;
+    color: #9aa3b2;
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.primary-btn {
+    background: #5b8cff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: #7fa8ff;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #3a3f4b;
+    padding: 14px 28px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #1f2430;
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 110px 20px;
+}
+
+.section.dark {
+    background: #11131a;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lead {
+    color: #9aa3b2;
+    margin-bottom: 40px;
+}
+
+.adv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.adv-card {
+    background: #161a22;
+    padding: 20px;
+    border-radius: 12px;
+    user-select: none;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.adv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(91, 140, 255, 0.3);
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 100px;
+}
+
+.two-col.reverse {
+    direction: rtl;
+}
+
+.two-col.reverse div {
+    direction: ltr;
+}
+
+.checklist li {
+    margin-bottom: 10px;
+    color: #9aa3b2;
+}
+
+.image-placeholder {
+    height: 260px;
+    background: #1b1f29;
+    border: 1px dashed #3a3f4b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #7c8596;
+    text-align: center;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.image-placeholder.large {
+    height: 320px;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(91, 140, 255, 0.3);
+}
+
+.comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+}
+
+.comparison th,
+.comparison td {
+    border: 1px solid #2a2f3b;
+    padding: 14px;
+    text-align: center;
+}
+
+.comparison th {
+    background: #1b1f29;
+}
+
+.highlight-col {
+    background: #1f2a44;
+    color: white;
+    font-weight: 500;
+}
+
+.highlight-col strong {
+    color: #7fb3ff;
+}
+
+.comparison tr:hover td {
+    background: #171a23;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background: #06070a;
+    padding: 60px 20px;
+    text-align: center;
+    color: #7c8596;
+}
+
+.feature-highlight {
+    color: #9fb4d9;
+    font-weight: 600;
+    position: relative;
+  }/* 
+  
+  .feature-highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      rgba(120,150,255,0.18),
+      rgba(170,140,255,0.18)
+    );
+    border-radius: 4px;
+  } */
+
+  .product-image {
+    width: 10%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.4);
+    box-shadow: 0 12px 35px rgba(91,140,255,0.35);
+  }
+  
+  .small {
+    width: 70%;
+    height: auto;
+  } 
+
+  .large {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-demo {
+    width: 100%;          /* займає всю ширину контейнера */
+    max-width: 800px;     /* обмеження максимальної ширини */
+    border-radius: 10px;   /* закруглені кути, як у image-placeholder */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* легка тінь */
+    display: block;       /* прибирає зайві inline-відступи */
+    margin: 20px auto;    /* центрування відео по горизонталі */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .video-demo:hover {
+    transform: scale(1.4);
+    box-shadow: 0 12px 35px rgba(91,140,255,0.35);
+  }
+
+  .demo-request-section {
+    background: #11131a;         /* темний фон, як секції dark */
+    padding: 80px 20px;
+    border-radius: 12px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.demo-request-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e6e8ee;
+}
+
+.demo-request-section p,
+.demo-request-section ul {
+    color: #9aa3b2;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.demo-request-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    text-align: left;
+    display: inline-block;
+}
+
+.demo-request-section ul li {
+    margin-bottom: 8px;
+}
+
+.demo-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.demo-buttons .button {
+    background: #5b8cff;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.demo-buttons .button:hover {
+    background: #7fa8ff;
+    transform: translateY(-2px);
+}
+
+.demo-request-section .note {
+    font-size: 0.9rem;
+    color: #7c8596;
+    margin-top: 25px;
+    line-height: 1.4;
+}
+
+.copy-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #666;
+}
+
+.copy-btn:hover {
+    background-color: #333;
 }
