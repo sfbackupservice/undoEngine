@@ -6,7 +6,6 @@ body {
     color: #e6e8ee;
     -webkit-user-select: none;
     user-select: none;
-    min-width: 768px;
 }
 
 h2 {
@@ -241,6 +240,11 @@ footer {
     color: #7c8596;
 }
 
+.feature-highlight{
+    word-break: break-word; 
+    overflow-wrap: break-word;
+}
+
 /* Медіа-запити */
 
 /* Планшети */
@@ -257,6 +261,9 @@ footer {
     .hero h1 { font-size: 28px; }
     .hero-sub { font-size: 14px; max-width: 90%; }
     .hero-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .product-image {
+        width: 90%;
+    }
     .product-image:hover {
         transform: scale(1.1);
     }
