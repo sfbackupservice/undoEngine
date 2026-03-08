@@ -269,6 +269,9 @@ footer {
     .product-image:hover {
         transform: scale(1.1);
     }
+    .video-demo{
+        width: 100%;
+    }
 
     /* Main Features: текст над картинкою */
     .two-col,
