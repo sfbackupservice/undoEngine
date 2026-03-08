@@ -243,6 +243,8 @@ footer {
 .feature-highlight{
     word-break: break-word; 
     overflow-wrap: break-word;
+    color: #7fb3ff; /* світлий синьо-фіолетовий */
+    font-weight: 500; /* трохи жирніше для акценту */
 }
 
 /* Медіа-запити */
