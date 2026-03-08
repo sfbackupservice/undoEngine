@@ -104,6 +104,7 @@ a:hover {
 
 .primary-btn:hover {
     background: #7fa8ff;
+    color: #fff;
     transform: translateY(-2px);
 }
 
