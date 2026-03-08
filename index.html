@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="salesforce, undo engine, undoengine, data recovery, rollback, mass update, field history, backup, service, salesforce backup, salesforce rollback tool, data restore, undo records, salesforce admin tool, record history tracking, mass data update salesforce, org backup">    
+    <meta name="keywords" content="salesforce, undo engine, undoengine, data recovery, rollback, mass update, field history, backup, service, salesforce backup, salesforce rollback tool, data restore, undo records, salesforce admin tool, record history tracking, mass data update salesforce, org backup">
     <meta name="robots" content="index, follow">
-    
+
     <title>UndoEngine</title>
     <link rel="stylesheet" href="styles.css">
 
@@ -36,52 +36,57 @@
     <section id="advantages" class="section dark">
         <div class="container narrow">
             <h2>Key Advantages</h2>
-            <div class="adv-grid"><div class="adv-card fade-in">
-                <h3>Compact History Architecture</h3>
-                <p>Unlike field-per-change trackers, we store the entire history of a record in a single compact JSON structure — dramatically reducing storage usage and allowing the system to scale safely to millions of updates.</p>
-            </div>
-            
-            <div class="adv-card fade-in">
-                <h3>Flow-First Configuration</h3>
-                <p>Admins can enable UndoEngine for any standard or custom object in less then two minutes using generic Flow templates — no Apex required.</p>
-            </div>
-            
-            <div class="adv-card fade-in">
-                <h3>Flexible Tracking</h3>
-                <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
-            </div>
-            
-            <div class="adv-card fade-in">
-                <h3>Full Control</h3>
-                <p>Configure everything from the UI — history length, number of tracked fields, async mode, batch sizes, and more.</p>
-            </div>
+            <div class="adv-grid">
+                <div class="adv-card fade-in">
+                    <h3>Compact History Architecture</h3>
+                    <p>Unlike field-per-change trackers, we store the entire history of a record in a single compact JSON structure — dramatically reducing storage usage and allowing the system to scale safely to millions of updates.</p>
+                </div>
 
-            <div class="adv-card fade-in">
-                <h3>Custom List View</h3>
-                <p>
-                    Unlike standard Salesforce List Views, this feature emulates List View behavior, bypassing platform limits. Includes a powerful SOQL-based filter engine and an exclusive <span class="feature-highlight">Geolocation</span> filter with special operators.                
-                </p>
-            </div>
+                <div class="adv-card fade-in">
+                    <h3>Flow-First Configuration</h3>
+                    <p>Admins can enable UndoEngine for any standard or custom object in less then 1.5 minute using generic Flow templates — no Apex required.</p>
+                </div>
 
-            <div class="adv-card fade-in">
-                <h3>Thoughtful UX Design</h3>
-                <p>
-                    UndoEngine prioritizes user experience with contextual tooltips and help texts throughout the interface. Data is displayed according to each user’s Salesforce locale, respecting date/time formats and time zones. Hover over values to see the exact UTC format stored in JSON — ensuring clarity for users and transparency for admins.                
-                </p>
+                <div class="adv-card fade-in">
+                    <h3>Flexible Tracking</h3>
+                    <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
+                </div>
+
+                <div class="adv-card fade-in">
+                    <h3>Full Control</h3>
+                    <p>Configure everything from the UI — history length, number of tracked fields, async mode, batch sizes, and more.</p>
+                </div>
+
+                <div class="adv-card fade-in">
+                    <h3>Custom List View</h3>
+                    <p>
+                        Unlike standard Salesforce List Views, this feature emulates List View behavior, bypassing platform limits. Includes a powerful SOQL-based filter engine and an exclusive <span class="feature-highlight">Geolocation</span> filter
+                        with special operators.
+                    </p>
+                </div>
+
+                <div class="adv-card fade-in">
+                    <h3>Thoughtful UX Design</h3>
+                    <p>
+                        UndoEngine prioritizes user experience with contextual tooltips and help texts throughout the interface. Data is displayed according to each user’s Salesforce locale, respecting date/time formats and time zones. Hover over values to see the exact UTC
+                        format stored in JSON — ensuring clarity for users and transparency for admins.
+                    </p>
+                </div>
+                <div class="adv-card fade-in">
+                    <h3>Built for Salesforce Scale</h3>
+                    <p>
+                        UndoEngine is designed to operate safely at enterprise scale. Asynchronous processing, configurable batch sizes and optimized history storage ensure reliable performance even with millions of record updates. The architecture respects Salesforce governor
+                        limits while providing powerful recovery and auditing capabilities for administrators.
+                    </p>
+                </div>
+                <div class="adv-card fade-in">
+                    <h3>Built-in Documentation & Tutorial</h3>
+                    <p>
+                        UndoEngine comes with comprehensive built-in documentation right inside the package. All features, settings, and instructions are well-structured and easily accessible via a dedicated left-hand tab, making it simple for users and administrators to get
+                        started without needing external resources.
+                    </p>
+                </div>
             </div>
-            <div class="adv-card fade-in">
-                <h3>Built for Salesforce Scale</h3>
-                <p>
-                UndoEngine is designed to operate safely at enterprise scale. Asynchronous processing, configurable batch sizes and optimized history storage ensure reliable performance even with millions of record updates. The architecture respects Salesforce governor limits while providing powerful recovery and auditing capabilities for administrators.
-                </p>
-            </div>
-            <div class="adv-card fade-in">
-                <h3>Built-in Documentation & Tutorial</h3>
-                <p>
-                    UndoEngine comes with comprehensive built-in documentation right inside the package. All features, settings, and instructions are well-structured and easily accessible via a dedicated left-hand tab, making it simple for users and administrators to get started without needing external resources.
-                </p>
-            </div>
-        </div>
     </section>
 
     <!-- Features Section -->
@@ -278,91 +283,86 @@
             </video>
         </div>
     </section>
-    
+
     <section class="section demo-request-section">
         <div class="container narrow">
-    
+
             <h2>Install UndoEngine Package</h2>
-    
+
             <p>
-                Choose the appropriate installation link depending on your Salesforce environment.
-                Use the Production link for production or developer orgs, and the Sandbox link for sandbox orgs.
+                Choose the appropriate installation link depending on your Salesforce environment. Use the Production link for production or developer orgs, and the Sandbox link for sandbox orgs.
             </p>
-    
+
             <!-- Production -->
             <div class="install-block">
                 <h3>Production / Developer Org</h3>
-    
-                <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD"
-                   target="_blank"
-                   class="primary-btn">
+
+                <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD" target="_blank" class="primary-btn">
                    Open Production Installation
                 </a>
-    
+
                 <p>
                     Installation URL:
                     <span id="prod-url" class="feature-highlight allow-select">
                         https://login.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD
                     </span>
                 </p>
-    
+
                 <button class="secondary-btn copy-btn" onclick="copyProdURL()">
                     Copy Production URL
                 </button>
             </div>
-    
+
             <!-- Sandbox -->
             <div class="install-block">
                 <h3>Sandbox Org</h3>
-    
-                <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD"
-                   target="_blank"
-                   class="primary-btn">
+
+                <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD" target="_blank" class="primary-btn">
                    Open Sandbox Installation
                 </a>
-    
+
                 <p>
                     Installation URL:
                     <span id="sandbox-url" class="feature-highlight allow-select">
                         https://test.salesforce.com/packaging/installPackage.apexp?p0=04tg50000004JKD
                     </span>
-                        
+
                 </p>
-    
+
                 <button class="secondary-btn copy-btn" onclick="copySandboxURL()">
                     Copy Sandbox URL
                 </button>
             </div>
-    
+
             <hr>
-    
+
             <h2>Activate Your Package</h2>
-    
+
             <p>
                 After installing the package, please send an email to activate your access.
             </p>
-    
+
             <p>
                 Email: <span id="email-text" class="feature-highlight allow-select">sfbackupservice@gmail.com</span>
             </p>
-    
+
             <button class="secondary-btn" onclick="copyEmail()">
                 Copy Email
             </button>
-    
+
             <p>Please include the following information in your email:</p>
-    
+
             <ul>
-                <li><strong>Requested Access Level</strong> – Trial (1-day free), Standard, or Premium</li>
+                <li><strong>Requested Access Level</strong> – Trial (5-days free), Standard, or Premium</li>
                 <li><strong>Organization Name</strong></li>
                 <li><strong>Organization ID</strong></li>
                 <li><strong>Organization URL</strong></li>
             </ul>
-    
+
             <p class="note">
                 Providing this information allows us to activate your package quickly.
             </p>
-    
+
         </div>
     </section>
 
@@ -372,6 +372,12 @@
             <p>UndoEngine 2026. Coming soon on AppExchange</p>
             <p>Salesforce is a registered trademark of Salesforce, Inc. This product is not affiliated with or endorsed by Salesforce.
             </p>
+            <div class="pages-links">
+                <a href="/index.html">Home</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms Of Service</a>
+                <a href="/refund-policy.html">Refund Policy</a>
+            </div>
         </div>
     </footer>
 

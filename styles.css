@@ -1,4 +1,5 @@
 /* Базові стилі залишаються твоїми */
+
 body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
@@ -12,11 +13,25 @@ h2 {
     text-align: center;
 }
 
+a {
+    color: #7fb3ff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #7fb3ff;
+    text-decoration: none;
+}
+
 .allow-select {
     user-select: text;
 }
 
+
 /* Гнучкий контейнер */
+
 .container {
     width: 92%;
     margin: auto;
@@ -30,7 +45,9 @@ h2 {
     padding-right: 20px;
 }
 
+
 /* Hero секція */
+
 .hero {
     padding: 100px 20px 60px 20px;
     text-align: center;
@@ -63,7 +80,9 @@ h2 {
     margin-top: 30px;
 }
 
+
 /* Кнопки */
+
 .primary-btn,
 .secondary-btn {
     padding: 12px 24px;
@@ -96,7 +115,9 @@ h2 {
     color: #fff;
 }
 
+
 /* Секції */
+
 .section {
     padding: 80px 20px;
 }
@@ -117,7 +138,9 @@ h2 {
     margin-bottom: 30px;
 }
 
+
 /* Key Advantages - адаптивна сітка */
+
 .adv-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -136,7 +159,9 @@ h2 {
     box-shadow: 0 12px 25px rgba(91, 140, 255, 0.3);
 }
 
+
 /* Двоколонкові блоки Main Features */
+
 .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -153,10 +178,12 @@ h2 {
     direction: ltr;
 }
 
+
 /* Зображення продукту з масштабуванням по origin */
+
 .product-image {
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -174,10 +201,12 @@ h2 {
 
 .product-image:hover {
     transform: scale(1.4);
-    box-shadow: 0 12px 30px rgba(91,140,255,0.35);
+    box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35);
 }
 
+
 /* Розміри зображень */
+
 .small {
     width: 300px;
 }
@@ -187,12 +216,14 @@ h2 {
     height: auto;
 }
 
+
 /* Відео */
+
 .video-demo {
     width: 80%;
     max-width: 1100px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     display: block;
     margin: 20px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -200,10 +231,12 @@ h2 {
 }
 
 .video-demo:hover {
-    box-shadow: 0 12px 30px rgba(91,140,255,0.35);
+    box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35);
 }
 
+
 /* Таблиці */
+
 .comparison {
     width: 100%;
     border-collapse: collapse;
@@ -232,7 +265,9 @@ h2 {
     color: #7fb3ff;
 }
 
+
 /* Footer */
+
 footer {
     background: #06070a;
     padding: 40px 20px;
@@ -240,39 +275,74 @@ footer {
     color: #7c8596;
 }
 
-.feature-highlight{
-    word-break: break-word; 
+.feature-highlight {
+    word-break: break-word;
     overflow-wrap: break-word;
-    color: #7fb3ff; /* світлий синьо-фіолетовий */
-    font-weight: 500; /* трохи жирніше для акценту */
+    color: #7fb3ff;
+    /* світлий синьо-фіолетовий */
+    font-weight: 500;
+    /* трохи жирніше для акценту */
 }
+
+.pages-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
 /* Медіа-запити */
 
+
 /* Планшети */
+
 @media (max-width: 1024px) {
-    .hero h1 { font-size: 40px; }
-    .hero-sub { font-size: 16px; }
-    .two-col { gap: 30px; grid-template-columns: 1fr 1fr; }
-    .adv-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero-sub {
+        font-size: 16px;
+    }
+    .two-col {
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .adv-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+
 /* Мобільні телефони */
+
 @media (max-width: 768px) {
-    .hero { padding: 80px 20px 40px 20px; }
-    .hero h1 { font-size: 28px; }
-    .hero-sub { font-size: 14px; max-width: 90%; }
-    .hero-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .hero {
+        padding: 80px 20px 40px 20px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero-sub {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
     .product-image {
         width: 90%;
     }
     .product-image:hover {
         transform: scale(1.1);
     }
-    .video-demo{
+    .video-demo {
         width: 100%;
     }
-
     /* Main Features: текст над картинкою */
     .two-col,
     .two-col.reverse {
@@ -282,21 +352,39 @@ footer {
         margin-bottom: 40px;
         direction: ltr;
     }
-
-    .two-col.reverse div:first-child { order: 1; }
-    .two-col.reverse div:last-child { order: 2; }
-
+    .two-col.reverse div:first-child {
+        order: 1;
+    }
+    .two-col.reverse div:last-child {
+        order: 2;
+    }
     /* Key Advantages: 1 колонка на мобільних */
-    .adv-grid { grid-template-columns: 1fr; }
-
+    .adv-grid {
+        grid-template-columns: 1fr;
+    }
     .comparison th,
-    .comparison td { font-size: 12px; padding: 8px; }
-    h2 { font-size: 24px; }
-    .adv-card { padding: 15px; }
-
-    .demo-request-section ul { padding-left: 15px; }
+    .comparison td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .adv-card {
+        padding: 15px;
+    }
+    .demo-request-section ul {
+        padding-left: 15px;
+    }
     .demo-request-section p,
-    .demo-request-section ul { font-size: 14px; line-height: 1.4; }
+    .demo-request-section ul {
+        font-size: 14px;
+        line-height: 1.4;
+    }
     .primary-btn,
-    .secondary-btn { width: 100%; text-align: center; padding: 12px 0; }
+    .secondary-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
 }
