@@ -274,11 +274,27 @@
 
     <!-- Live Demo -->
     <section class="section dark">
-        <div class=" ">
+        <div>
             <h2>Live Product Demo</h2>
             <p class="lead">See how quickly you can connect any object tracking — under 1.5 minute!</p>
             <video class="video-demo large" controls playsinline webkit-playsinline>
                 <source src="video/config-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <p class="lead">Mass undo in action</p>
+            <ul>
+                <li> Preview records before performing an undo</li>
+                <li> Ensure that the filter logic in the Mass Undo UI returns the records you want</li>
+                <li> Use the "Preview Record" feature to review individual entries</li>
+                <li> Click the "Are These Here?" button to verify records (buttons operate independently)</li>
+                <li> Check "Generate CSV" and then click "UNDO"</li>
+                <li> Review the batch report and CSV audit for details</li>
+                <li> Preview records after the undo to confirm the changes</li>
+                <li> Verify that the History Recorder updated history during UNDO run by checking a random object from the list (if you do not want Mass Undo actions to be recorded in the history logs, this feature can be disabled - Undo and History Recording are 2 separate processes)</li>
+            </ul>
+            <video class="video-demo large" controls playsinline webkit-playsinline>
+                <source src="video/undo-demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
