@@ -270,6 +270,18 @@ h2 {
     color: #7fb3ff;
 }
 
+.store-button-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-text{
+    font-weight: 500;
+    color: #FFC107;
+}
+
 
 /* Footer */
 

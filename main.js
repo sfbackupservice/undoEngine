@@ -15,3 +15,7 @@ function copyEmail() {
     navigator.clipboard.writeText(text)
         .then(() => alert("Email copied!"));
 }
+
+function goToStore() {
+    window.open('https://www.creem.io/stores/createwithpassion', '_blank');
+}
