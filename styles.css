@@ -73,6 +73,20 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.product-logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+}
+
+.product-logo {
+    max-width: 120px; /* або інший розмір, щоб не переважав заголовок */
+    display: inline-block;
+    margin-bottom: 20px; 
+    margin-right: 20px;
+}
+
 .hero-sub {
     font-size: 18px;
     color: #9aa3b2;
