@@ -2,11 +2,19 @@
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Головна сторінка -->
+  <!-- nidex -->
   <url>
     <loc>https://sfbackupservice.github.io/undoEngine/index.html</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- why-->
+  <url>
+    <loc>https://sfbackupservice.github.io/undoEngine/why.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>1.0</priority>
   </url>
 
