@@ -19,3 +19,13 @@ function copyEmail() {
 function goToStore() {
     window.open('https://www.creem.io/stores/createwithpassion', '_blank');
 }
+
+function loadFooter() {
+    fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('footer').innerHTML = html;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', loadFooter);
