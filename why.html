@@ -27,7 +27,7 @@
 
                 <br><br>The second approach is change tracking and audit logging. Here the logic is different: if every change is recorded, in theory you can reconstruct any state.
                 <br>In practice, however, this often requires significant manual effort and quickly becomes an operational burden. History grows alongside the system, it needs to be constrained, carefully managed, and decisions must be made about what to track, how long to retain it, and how much storage it consumes.
-                <br>The core issue is that history exists, but in it does not form a unified operational layer that can be used during an incident.
+                <br><br>The core issue is that history exists, but in it does not form a unified operational layer that can be used during an incident.
             </p>
             <p>UndoEngine approaches this differently.
                 <br><br>Instead of treating history as an archive or a collection of logs, it builds a continuous, compact timeline of changes within the Salesforce system, with minimal and controlled storage usage.
