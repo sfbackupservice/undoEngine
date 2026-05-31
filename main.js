@@ -17,7 +17,7 @@ function copyEmail() {
 }
 
 function goToStore() {
-    window.open('https://www.creem.io/stores/createwithpassion', '_blank');
+    window.open('https://www.creem.io/payment/prod_3dE15YwKUgO7mI81JlCOdF', '_blank');
 }
 
 function loadFooter() {
