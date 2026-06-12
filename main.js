@@ -20,6 +20,10 @@ function goToStore() {
     window.open('https://www.creem.io/payment/prod_3dE15YwKUgO7mI81JlCOdF', '_blank');
 }
 
+function makeOrder() {
+    window.open('https://undoengine.my.site.com/s/order', '_blank');
+}
+
 function loadFooter() {
     fetch('/footer.html')
         .then(res => res.text())
