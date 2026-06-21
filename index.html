@@ -183,88 +183,47 @@
                 <thead>
                     <tr>
                         <th>Capability</th>
-                        <th>Field History</th>
-                        <th>Typical AppExchange Tools</th>
+                        <th>Snapshot-Based Backup</th>
+                        <th>Change Tracking / Audit Logging</th>
                         <th class="highlight-col">UndoEngine</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>True Data Rollback</td>
-                        <td>❌</td>
-                        <td>Partial</td>
-                        <td class="highlight-col"><strong>✔ Full rollback</strong></td>
+                        <td>Rollback Precision</td>
+                        <td>Imprecise — incidents rarely align with snapshot timing; valid changes after the snapshot are lost, or part of the corrupted state remains</td>
+                        <td>Theoretically any state can be reconstructed, but in practice this requires significant manual effort</td>
+                        <td class="highlight-col"><strong>✔ Point-in-time rollback at field or record level, without losing valid changes</strong></td>
                     </tr>
                     <tr>
-                        <td>Storage Efficiency</td>
-                        <td>Low</td>
-                        <td>Low</td>
-                        <td class="highlight-col"><strong>✔ Compact JSON history</strong></td>
+                        <td>Storage Volume</td>
+                        <td>External storage — doesn't burden the org, but stores full state copies rather than just changes</td>
+                        <td>~2 KB per change — storage grows proportionally with every update to a record</td>
+                        <td class="highlight-col"><strong>✔ ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</strong></td>
                     </tr>
                     <tr>
-                        <td>Field-Level Recovery</td>
-                        <td>❌</td>
-                        <td>Limited</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
+                        <td>Recovery Granularity</td>
+                        <td>All-or-nothing — restores the entire state or object</td>
+                        <td>Data is technically available, but there's no built-in mechanism to apply it back</td>
+                        <td class="highlight-col"><strong>✔ Field, set of fields, single record, or mass restore — your choice</strong></td>
                     </tr>
                     <tr>
-                        <td>Mass Update Recovery</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
+                        <td>Incident Response</td>
+                        <td>Requires a full system restore, risking business downtime</td>
+                        <td>Exists only as an archive or log collection — doesn't form a unified layer to act on</td>
+                        <td class="highlight-col"><strong>✔ Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</strong></td>
                     </tr>
                     <tr>
-                        <td>Record Restore</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
+                        <td>Adding New Objects to Tracking</td>
+                        <td>No development needed — object is selected via admin UI configuration</td>
+                        <td>Requires writing and integrating an Apex trigger for each new object before it can be tracked</td>
+                        <td class="highlight-col"><strong>✔ No development needed — any object connected in a few clicks via ready-to-use Flow templates</strong></td>
                     </tr>
                     <tr>
-                        <td>Mass Record Restore</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Flow-first Configuration</td>
-                        <td>❌</td>
-                        <td>Apex development required</td>
-                        <td class="highlight-col"><strong>✔ Ready-to-use Flow powered by Invocable Apex Action</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Timezone Correctness</td>
-                        <td>Basic</td>
-                        <td>Often Broken</td>
-                        <td class="highlight-col"><strong>✔ Enterprise-grade</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Managed Package Debugging</td>
-                        <td>Native</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Built-in Debug</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Settings UI (batch size, sync/async, and more)</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
-                    </tr>
-                        <td>Log Manager UI</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td class="highlight-col"><strong>✔ Yes</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Supports all Salesforce field types</td>
-                        <td>❌</td>
-                        <td>Partial / Limited</td>
-                        <td class="highlight-col"><strong>✔ Yes (all updateable fields)</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Salesforce Mobile App</td>
-                        <td>Native</td>
-                        <td>Partial / No</td>
-                        <td class="highlight-col"><strong>✔ Full compatibility</strong></td>
+                        <td>Data Location</td>
+                        <td>Stored outside the Salesforce org</td>
+                        <td>Native, but as raw logs but lacks a dedicated recovery UI</td>
+                        <td class="highlight-col"><strong>✔ Native — data stays inside the org, with a UI to work with it</strong></td>
                     </tr>
                 </tbody>
             </table>
