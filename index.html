@@ -27,8 +27,8 @@
                 <img src="images/CWP.png" alt="UndoEngine Logo" class="product-logo">
             </div>
             <div class="badge">Salesforce Data Protection & Recovery Platform</div>
-            <h1>A native Salesforce recovery time machine built for speed, control, and scale</h1>
-            <h2>Undo any data change in your Salesforce organization — without bloating storage or moving your data outside your org. No developer overhead</h2>
+            <h1>A native Salesforce recovery time machine — every change tracked, nothing lost</h1>
+            <h2>UndoEngine tracks every field change continuously, storing the full history in a single ~2 KB log per record — not per change. Restore in seconds, at any scale. Connect any object with clicks, not Apex. No snapshot gaps. Your data stays under your control</h2>
 
             <p class="hero-sub">
                 UndoEngine
@@ -50,15 +50,12 @@
             <div class="adv-grid">
                 <div class="adv-card fade-in">
                     <h3>Compact History Architecture</h3>
-                    <p>Snapshot-based external backups miss changes. Record-per-change systems overload storage. There’s a better way.
-
-                         <br><br>UndoEngine eliminates that trade-off by storing the complete history in a compact structures — natively inside Salesforce.
-                    </p>
+                    <p>Snapshot-based external backups miss changes between snapshots. Record-per-change systems grow storage with every update. UndoEngine avoids both: one ~2 KB log per record, natively inside Salesforce, capturing the complete field history.</p>
                 </div>
 
                 <div class="adv-card fade-in">
                     <h3>Flow-First Configuration</h3>
-                    <p>Admins can enable UndoEngine for any standard or custom object in less then 1.5 minute using generic Flow templates — no Apex required.</p>
+                    <p>Connect any standard or custom object in under 90 seconds using ready-to-use Flow templates — no Apex to write or maintain.</p>
                 </div>
 
                 <div class="adv-card fade-in">
@@ -145,6 +142,7 @@
                 <img src="images/history-viewer.png" alt="Record History Viewer" class="product-image small right">
                 <div>
                     <h3>Record History Viewer</h3>
+                    <p>See exactly what changed, when, and by whom — then undo just the part that was wrong.</p>
                     <ul class="checklist">
                         <li>Field-by-field navigation</li>
                         <li>User & date filters</li>
@@ -155,25 +153,28 @@
             </div>
 
             <div class="two-col reverse fade-in">
-                <img src="images/mass-undo.png" alt="Record History Viewer" class="product-image large left">
+                <img src="images/mass-undo.png" alt="Mass Restore Interface" class="product-image large left">
                 <div>
                     <h3>Mass Restore Interface</h3>
+                    <p>Fix a bad bulk update across thousands of records without hitting Salesforce list view limits.</p>
                     <ul class="checklist">
-                        <li>Custom list view engine bypassing standard Salesforce limits</li>
-                        <li>Bulk undo operations with CSV audit</li>
+                        <li>Custom list view engine bypassing standard Salesforce row limits</li>
+                        <li>Bulk undo operations with exportable CSV audit trail</li>
                     </ul>
                 </div>
             </div>
 
             <div class="two-col fade-in">
-                <img src="images/settings-page.png" alt="Record History Viewer" class="product-image large right">
+                <img src="images/settings-page.png" alt="Settings UI" class="product-image large right">
                 <div>
                     <h3>Settings UI</h3>
+                    <p>Tune UndoEngine to your org's scale and risk tolerance.</p>
                     <ul class="checklist">
                         <li>Custom error logs</li>
                         <li>Notifications on failures</li>
                         <li>Sync/async control</li>
                         <li>Batch size control</li>
+                    </ul>
                 </div>
             </div>
 
@@ -181,6 +182,7 @@
                 <img src="images/log-manager.png" alt="Log Manager" class="product-image large left">
                 <div>
                     <h3>Log Manager</h3>
+                    <p>Stay in control of what's tracked and recoverable, including deletions.</p>
                     <ul class="checklist">
                         <li>Manage your history logs via the special UI</li>
                         <li>Perform deleted records mass restore</li>
@@ -192,6 +194,7 @@
                 <img src="images/encryption-manager.png" alt="Data Security Manager" class="product-image large right">
                 <div>
                     <h3>Data Security Manager</h3>
+                    <p>Keep tracked history encrypted and compliant with your org's security policy.</p>
                     <ul class="checklist">
                         <li>Generate encryption keys for secure data storage</li>
                         <li>Enable or disable encryption per configuration</li>

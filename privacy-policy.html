@@ -1,93 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <title>Privacy Policy</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <title>Privacy Policy</title>
+    </head>
 
-<body>
-    <section class="section dark">
-        <div class="container narrow">
+    <body>
+        <section class="section dark">
+            <div class="container narrow">
 
-            <h1>Privacy Policy</h1>
+                <h1>Privacy Policy</h1>
 
-            <p>
-                This Privacy Policy explains how we collect, use, and protect information when you use UndoEngine,
-                a Salesforce data management and recovery tool.
-            </p>
-
-            <h2>1. Information We Collect</h2>
-            <ul>
-                <li>Account information such as name and email provided during registration or subscription;</li>
-                <li>Billing information processed by our payment provider (Creem);</li>
-                <li>Technical and usage data related to product usage and system performance;</li>
-                <li>Salesforce organization metadata, including Organization ID, Organization URL, and Organization Name,
-                    used strictly for subscription management and service activation;</li>
-                <li>We do not store or copy Salesforce business data, including records, record changes, backups, or CRM content,
-                    outside the customer’s Salesforce organization.</li>
-            </ul>
-
-            <h2>2. How We Use Information</h2>
-            <ul>
-                <li>To operate and maintain the Service;</li>
-                <li>To process payments and manage subscriptions;</li>
-                <li>To provide customer support and communicate updates;</li>
-                <li>To improve reliability, performance, and functionality of the Service;</li>
-                <li>To comply with legal obligations.</li>
-            </ul>
-
-            <h2>3. Salesforce Data</h2>
-            <p>
-                UndoEngine operates entirely within the customer's Salesforce environment via authorized API access.
-                All Salesforce business data remains stored in the customer's Salesforce organization at all times.
-            </p>
-
-            <p>
-                The customer remains the data controller. UndoEngine processes Salesforce data only on behalf of the customer
-                and solely for the purpose of executing requested operations such as backup, restore, rollback, and synchronization.
-            </p>
-
-            <h2>4. Third-Party Services</h2>
-            <p>
-                We use third-party providers for payment processing (Creem) and infrastructure hosting.
-                These providers may process limited technical and billing-related data required to operate the Service.
-            </p>
-
-            <h2>5. Data Security</h2>
-            <p>
-                We implement reasonable technical and organizational security measures to protect our systems and access credentials.
-                Salesforce business data remains entirely within the customer's Salesforce organization.
-            </p>
-
-            <h2>6. Data Retention</h2>
-            <p>
-                We do not store Salesforce business data.
-                We retain only minimal account information and Salesforce organization metadata (Organization ID, URL, and Name),
-                as well as billing-related data necessary to operate the Service and manage subscriptions.
-            </p>
-
-            <h2>7. Your Rights</h2>
-            <p>
-                You may request access, modification, or deletion of your personal account data by contacting
-                <span id="email-text" class="feature-highlight allow-select">support@undoengine.com</span>.
-            </p>
-
-            <h2>8. Changes to This Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time. Updates will be posted on this page.
-            </p>
-
-            <p>Last updated: 2026-06-15</p>
-
-        </div>
-    </section>
-
-    <div id="footer"></div>
-    <script src="main.js"></script>
-</body>
+                <p>
+                    This Privacy Policy explains how we collect, use, and protect information when you use UndoEngine
+                    ("Service"), a Salesforce data management and recovery tool.
+                </p>
+            
+                <h2>1. Information We Collect</h2>
+                <ul>
+                    <li>Account information such as name and email provided during registration or subscription;</li>
+                    <li>Payment information is processed directly by our payment provider (Creem) — we do not
+                        collect, store, or have access to credit card data or other payment credentials;</li>
+                    <li>Technical and usage data related to product usage and system performance;</li>
+                    <li>Salesforce organization metadata, including Organization ID, Organization URL, and
+                        Organization Name, stored in Airtable and used strictly to verify authorization to access
+                        the Service: each time the package is used, an authenticated request is made to Airtable
+                        to confirm that the installing organization's Organization ID is on the allowed list of
+                        clients;</li>
+                    <li>We do not store or copy Salesforce business data, including records, record history, or any
+                        CRM content, outside the customer's Salesforce organization, except for files for which the
+                        customer may optionally connect their own Cloudflare R2 storage for backup and restore —
+                        described in more detail in Section 4.</li>
+                </ul>
+            
+                <h2>2. Legal Basis for Processing (for EU Users)</h2>
+                <p>We process personal data on the following legal bases under the GDPR:</p>
+                <ul>
+                    <li>Performance of a contract (Art. 6(1)(b)) — to provide the Service and manage your subscription;</li>
+                    <li>Legitimate interest (Art. 6(1)(f)) — to ensure security, prevent fraud, and improve the Service;</li>
+                    <li>Legal obligation (Art. 6(1)(c)) — to comply with applicable law, including tax and accounting requirements.</li>
+                </ul>
+            
+                <h2>3. How We Use Information</h2>
+                <ul>
+                    <li>To operate and maintain the Service;</li>
+                    <li>To process payments and manage subscriptions;</li>
+                    <li>To provide customer support and communicate updates;</li>
+                    <li>To improve reliability, performance, and functionality of the Service;</li>
+                    <li>To comply with legal obligations.</li>
+                </ul>
+            
+                <h2>4. Salesforce Data and File Storage</h2>
+                <p>
+                    UndoEngine operates entirely within the customer's Salesforce environment via authorized API
+                    access. All Salesforce business data remains stored in the customer's Salesforce organization,
+                    except for files for which the customer has optionally connected their own Cloudflare R2
+                    storage for backup and restore.
+                </p>
+                <p>In this case:</p>
+                <ul>
+                    <li>The customer independently creates and controls their own Cloudflare account and R2 bucket;</li>
+                    <li>The customer provides UndoEngine with access credentials (Access Key ID, Secret Key, Account ID)
+                        solely to perform file backup and restore operations on the customer's behalf;</li>
+                    <li>Files are stored in the customer's bucket, isolated from other customers, with no shared
+                        access or quotas;</li>
+                    <li>UndoEngine does not access the contents of the bucket outside of operations initiated by the
+                        customer through the Service, and does not copy or retain copies of these files on its own
+                        infrastructure;</li>
+                    <li>The customer remains the controller of the data stored in their Cloudflare R2 bucket and is
+                        responsible for configuring their own Cloudflare account in accordance with applicable legal
+                        requirements.</li>
+                </ul>
+                <p>
+                    The customer remains the data controller for all Salesforce and file data. UndoEngine processes
+                    this data only on behalf of the customer and solely for the purpose of executing requested
+                    operations such as backup, restore, rollback, and synchronization.
+                </p>
+            
+                <h2>5. Third Parties and Subprocessors</h2>
+                <p>We engage the following subprocessors to process limited technical data and to process payments:</p>
+                <ul>
+                    <li>Creem — payment processing; Creem independently collects, processes, and stores payment
+                        data in accordance with its own privacy policy;</li>
+                    <li>Airtable — storage of customer account information and Salesforce organization metadata
+                        (Organization ID, Organization URL, Organization Name) for licensing and access control
+                        purposes;</li>
+                    <li>Cloudflare — provided by the customer as optional file storage on their own account;
+                        Cloudflare in this case acts as the customer's subprocessor, not ours, since the account,
+                        bucket, and data are fully owned and controlled by the customer.</li>
+                </ul>
+            
+                <h2>6. Cookies and Analytics</h2>
+                <p>
+                    Our website does not use analytics or marketing cookies that identify individual visitors.
+                </p>
+            
+                <h2>7. Data Security</h2>
+                <p>
+                    We implement reasonable technical and organizational security measures to protect our systems
+                    and access credentials. Salesforce business data remains entirely within the customer's
+                    Salesforce organization, except for files for which the customer has optionally configured
+                    backup through their own Cloudflare R2 storage — in this case, the security of such data also
+                    depends on the customer's own Cloudflare account configuration, as described in Section 4.
+                    We do not process or store payment data — its protection is provided by Creem.
+                </p>
+            
+                <h2>8. Data Retention</h2>
+                <p>
+                    We do not store Salesforce business data and do not store payment data — its processing and
+                    storage is handled solely by our payment provider, Creem, in accordance with its own privacy
+                    policy. We retain only minimal account information (name, email) and Salesforce organization
+                    metadata (Organization ID, URL, and Name) necessary to operate the Service and manage
+                    subscriptions.
+                </p>
+                <p>
+                    Files for which the customer has optionally connected their own Cloudflare R2 storage are
+                    retained in the customer's account according to their own retention settings — we do not
+                    control or determine the retention period for these files.
+                </p>
+                <p>
+                    Account information and Salesforce organization metadata are retained for the duration of the
+                    subscription and are deleted within a reasonable period after cancellation, unless longer
+                    retention is required by applicable law (including tax law).
+                </p>
+            
+                <h2>9. Data Breach Notification</h2>
+                <p>
+                    In the event of a security incident affecting personal data, we will notify affected users and,
+                    where required, the relevant supervisory authorities within the timeframes established by
+                    applicable law.
+                </p>
+            
+                <h2>10. Your Rights (for EU/GDPR Users)</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>access your personal data;</li>
+                    <li>correct inaccurate data;</li>
+                    <li>request deletion of your data ("right to be forgotten");</li>
+                    <li>restrict processing;</li>
+                    <li>data portability;</li>
+                    <li>object to processing;</li>
+                    <li>lodge a complaint with a data protection supervisory authority in your country.</li>
+                </ul>
+                <p>
+                    To exercise these rights, contact
+                    <span id="email-text-1" class="feature-highlight allow-select">support@undoengine.com</span>.
+                </p>
+            
+                <h2>11. Rights of California Residents (CCPA/CPRA)</h2>
+                <p>If you are a California resident, under the CCPA/CPRA you have the right to:</p>
+                <ul>
+                    <li>know what personal information we collect and how it is used;</li>
+                    <li>request deletion of your personal information;</li>
+                    <li>opt out of the sale/sharing of personal information — we do not sell or share personal
+                        information with third parties for cross-context behavioral advertising or monetary
+                        consideration;</li>
+                    <li>non-discrimination — we will not penalize you for exercising your privacy rights through
+                        reduced service quality or changed pricing. This does not apply to data without which
+                        providing the Service is technically impossible (in particular, the Organization ID
+                        required to authorize access to the Service) — declining to provide such data means the
+                        Service cannot be used.</li>
+                </ul>
+                <p>
+                    To exercise these rights, contact
+                    <span id="email-text-2" class="feature-highlight allow-select">support@undoengine.com</span>.
+                </p>
+            
+                <h2>12. Right to Lodge a Complaint</h2>
+                <p>
+                    In addition to contacting us directly, you have the right to lodge a complaint with the relevant
+                    data protection supervisory authority in your jurisdiction.
+                </p>
+            
+                <h2>13. Changes to This Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time. Updates will be posted on this page.
+                </p>
+            
+                <p>Last updated: 31.07.2026</p>
+            
+            </div>
+        </section>
+    
+        <div id="footer"></div>
+        <script src="main.js"></script>
+    </body>
 
 </html>

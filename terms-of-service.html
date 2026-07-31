@@ -32,6 +32,12 @@
             </p>
 
             <p>
+                The Service is intended for business use by Salesforce organizations and their authorized
+                administrators. By registering for or subscribing to the Service, the Customer confirms that use of
+                the Service is for business purposes and not as a consumer for personal, family, or household use.
+            </p>
+
+            <p>
                 The Service operates within the limitations of Salesforce APIs and does not function as a standalone
                 data storage or archival system.
             </p>
@@ -39,6 +45,11 @@
             <p>
                 The Service is not a guaranteed backup solution and outcomes may vary depending on system state,
                 configuration, and external dependencies.
+            </p>
+
+            <p>
+                For more information on how data is handled, including the optional Cloudflare file storage
+                integration and the use of Airtable for licensing, see our Privacy Policy.
             </p>
 
             <h2>2. Trial and Subscription</h2>
@@ -53,20 +64,32 @@
             <ul>
                 <li>Subscription fees are charged according to the selected plan.</li>
                 <li>All payments are non-refundable except where required by applicable law.</li>
+                <li>We reserve the right to change subscription pricing. Customers will be notified of any price
+                    increase affecting an active subscription at least 30 days before it takes effect. See our
+                    Refund Policy for details.</li>
+                <li>If a chargeback or payment dispute is initiated through the Customer's bank or card issuer, we
+                    reserve the right to suspend or terminate access to the Service until the matter is resolved.
+                    See our Refund Policy for details.</li>
             </ul>
 
             <h2>4. Access and Use</h2>
             <ul>
-                <li>The Service operates through authorized access to the Customer’s Salesforce Organization.</li>
+                <li>The Service operates through authorized access to the Customer's Salesforce Organization.</li>
                 <li>All actions executed through the Service are triggered by authenticated requests made through Customer-controlled access.</li>
                 <li>The Customer is responsible for managing access to the Service and its connected Salesforce Organization.</li>
-                <li>UndoEngine does not control or monitor individual users within the Customer’s organization.</li>
+                <li>UndoEngine does not control or monitor individual users within the Customer's organization.</li>
             </ul>
 
             <h2>5. Service Limitations</h2>
             <ul>
                 <li>The Service depends on Salesforce APIs and is subject to their limits and availability.</li>
-                <li>Operations may be partial, delayed, or fail due to API limits, permissions, or system constraints.</li>
+                <li>The Service depends on Airtable for license verification; if Airtable is unavailable, license
+                    verification may fail and access to the Service may be temporarily restricted.</li>
+                <li>For Customers using the optional Cloudflare R2 file storage integration, file backup and
+                    restore operations depend on the availability and configuration of the Customer's own
+                    Cloudflare account.</li>
+                <li>Operations may be partial, delayed, or fail due to API limits, permissions, third-party service
+                    availability, or other system constraints.</li>
                 <li>UndoEngine does not guarantee completeness or accuracy of any operation results.</li>
             </ul>
 
@@ -108,27 +131,70 @@
 
             <h2>8. Third-Party Services</h2>
             <p>
-                The Service depends on Salesforce and other third-party providers.
-                UndoEngine is not responsible for outages, failures, or data loss caused by third-party systems.
+                The Service depends on Salesforce, Airtable, Cloudflare (for Customers using the optional file
+                storage integration), and other third-party providers. UndoEngine is not responsible for outages,
+                failures, or data loss caused by third-party systems, including but not limited to Salesforce,
+                Airtable, or the Customer's own Cloudflare account.
             </p>
 
-            <h2>9. Relationship with Salesforce</h2>
+            <h2>9. Intellectual Property</h2>
+            <p>
+                UndoEngine and all related technology, software code, design, and documentation are and remain the
+                exclusive property of the developer. The Customer is granted a limited, non-exclusive,
+                non-transferable license to use the Service in accordance with these Terms and the selected
+                subscription plan. This license does not grant the Customer any ownership rights in the Service or
+                its source code.
+            </p>
+
+            <h2>10. Termination</h2>
+            <p>
+                We may suspend or terminate the Customer's access to the Service in the event of non-payment,
+                breach of these Terms, misuse of the Service, or as reasonably necessary to protect the security or
+                integrity of the Service. The Customer may stop using the Service at any time by cancelling the
+                subscription in accordance with the Refund Policy. Upon termination, data stored in the Customer's
+                Salesforce Organization or in the Customer's own Cloudflare account remains under the Customer's
+                control and is not deleted or modified by UndoEngine.
+            </p>
+
+            <h2>11. Indemnification</h2>
+            <p>
+                The Customer agrees to indemnify and hold UndoEngine harmless from any third-party claims, damages,
+                or demands arising from the Customer's misuse of the Service, breach of these Terms, or violation
+                of applicable law.
+            </p>
+
+            <h2>12. Force Majeure</h2>
+            <p>
+                UndoEngine shall not be liable for any failure or delay in performing its obligations caused by
+                circumstances beyond UndoEngine's reasonable control, including but not limited to outages of
+                Salesforce, Airtable, Cloudflare, or other third-party services, natural disasters, network
+                failures, or acts of government authorities.
+            </p>
+
+            <h2>13. Assignment</h2>
+            <p>
+                The Customer may not assign or transfer its rights and obligations under these Terms without
+                UndoEngine's prior written consent. UndoEngine may assign its rights and obligations under these
+                Terms in connection with a reorganization, sale of assets, or change of control.
+            </p>
+
+            <h2>14. Relationship with Salesforce</h2>
             <p>
                 UndoEngine is an independent product and is not affiliated with Salesforce.
             </p>
 
-            <h2>10. Changes to Terms</h2>
+            <h2>15. Changes to Terms</h2>
             <p>
                 We may update these Terms from time to time. Continued use of the Service constitutes acceptance of the updated Terms.
             </p>
 
-            <h2>11. Contact</h2>
+            <h2>16. Contact</h2>
             <p>
                 For questions regarding these Terms, contact:
                 <span class="feature-highlight allow-select">support@undoengine.com</span>
             </p>
 
-            <p>Last updated: 2026-06-15</p>
+            <p>Last updated: 31.07.2026</p>
 
         </div>
     </section>
