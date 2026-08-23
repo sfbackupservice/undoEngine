@@ -65,7 +65,7 @@
 
                 <div class="adv-card fade-in">
                     <h3>Back up and Restore</h3>
-                    <p>Back up field changes and restore records individually or in bulk</p>
+                    <p>Back up field changes, restore records and files individually or in bulk</p>
                 </div>
 
                 <div class="adv-card fade-in">
@@ -105,7 +105,7 @@
             </div>
     </section>
 
-    <section class="section announcement">
+    <!-- <section class="section announcement">
         <div class="container">
 
             <div class="badge upcoming-badge">
@@ -131,9 +131,8 @@
             </p>
 
         </div>
-    </section>
-
-    <!-- Features Section -->
+    </section> -->
+    
     <section id="features" class="section">
         <div class="container">
             <h2>Main Features</h2>
@@ -203,6 +202,21 @@
                 </div>
             </div>
 
+            <div class="two-col reverse fade-in">
+                <img src="images/file-backup.png" alt="File Backup" class="product-image large left">
+                <div>
+                    <h3>Mass File Backup (R2 Integration)</h3>
+                    <p>Everything you need for a complete recovery</p>
+                    <ul class="checklist">
+                        <li>Attachments</li>
+                        <li>ContentVersions</li>
+                        <li>Historical relationships</li>
+                        <li>Migration of your existing files</li>
+                        <li>Automatic backup of newly created files</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -233,10 +247,10 @@
                         <td class="highlight-col"><strong>✔ ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</strong></td>
                     </tr>
                     <tr>
-                        <td>Recovery Granularity</td>
+                        <td>Recovery</td>
                         <td>All-or-nothing — restores the entire state or object</td>
-                        <td>Data is technically available, but there's no built-in mechanism to apply it back</td>
-                        <td class="highlight-col"><strong>✔ Field, set of fields, single record, or mass restore — your choice</strong></td>
+                        <td>Data is technically available, but rollback often requires significant manual effort. No Salesforce file tracking</td>
+                        <td class="highlight-col"><strong>✔ Field, set of fields, single record, file or mass restore — your choice</strong></td>
                     </tr>
                     <tr>
                         <td>Incident Response</td>
@@ -254,7 +268,7 @@
                         <td>Data Location</td>
                         <td>Stored outside the Salesforce org</td>
                         <td>Native, but as raw logs</td>
-                        <td class="highlight-col"><strong>✔ Native — data stays inside the org, with a UI to work with it</strong></td>
+                        <td class="highlight-col"><strong>✔ Native for objects — data stays inside the org. Your own R2 storage for files. UI to work with both</strong></td>
                     </tr>
                 </tbody>
             </table>
