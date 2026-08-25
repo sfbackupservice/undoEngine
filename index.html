@@ -11,149 +11,180 @@
     <link rel="canonical" href="https://undoengine.com/">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Якщо хочеш PNG -->
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Можна ще для Apple (iOS) -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
 </head>
 
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <div class="product-logo-container">
-                <img src="images/favicon.png" alt="UndoEngine Logo" class="product-logo">
-                <img src="images/CWP.png" alt="UndoEngine Logo" class="product-logo">
-            </div>
-            <div class="badge">Salesforce Data Protection & Recovery Platform</div>
-            <h1>A native Salesforce recovery time machine — every change tracked, nothing lost</h1>
-            <h2>UndoEngine tracks every field change continuously, storing the full history in a single ~2 KB log per record — not per change. Restore in seconds, at any scale. Connect any object with clicks, not Apex. No snapshot gaps. Your data stays under your control</h2>
+<header class="hero">
+    <div class="hero-ticker" aria-hidden="true">
+
+        <div class="hero-logo">
+            <img src="images/favicon.png" alt="">
+        </div>
+
+        <div class="ticker-line"></div>
+
+        <div class="ticker-item" style="--d:0s; top:14%;">
+            <span class="ticker-dot"></span>
+            <span class="ticker-label">field_amount → $4,200</span>
+        </div>
+
+        <div class="ticker-item" style="--d:2s; top:40%;">
+            <span class="ticker-dot"></span>
+            <span class="ticker-label">stage → Closed Won</span>
+        </div>
+
+        <div class="ticker-item" style="--d:4s; top:64%;">
+            <span class="ticker-dot"></span>
+            <span class="ticker-label">owner → J. Alves</span>
+        </div>
+
+        <div class="ticker-item" style="--d:6s; top:86%;">
+            <span class="ticker-dot"></span>
+            <span class="ticker-label">record restored</span>
+        </div>
+    </div>
+
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+            <div class="badge">Salesforce Data Protection &amp; Recovery Platform</div>
+
+            <h1>A native Salesforce recovery time machine</h1>
 
             <p class="hero-sub">
-                UndoEngine
-                <div class="hero-buttons">
-                    <a class="primary-btn" href="#features">Explore Features</a>
-                    <a class="secondary-btn" href="#comparison">Platform Comparison</a>
-                </div>
-                <div>
-                    <a href="why.html">Why choose UndoEngine?</a>
-                </div>
+                Every field change tracked, continuously — nothing lost. UndoEngine stores the full history in a single ~2&nbsp;KB log per record, not per change. Restore in seconds, at any scale. Connect any object with clicks, not Apex.
             </p>
+
+            <div class="hero-buttons">
+                <a class="primary-btn" href="#features">Explore Features</a>
+                <a class="secondary-btn" href="#comparison">Platform Comparison</a>
+            </div>
+
+            <div class="hero-links">
+                <a href="why.html">Why choose UndoEngine? →</a>
+            </div>
         </div>
-    </header>
+
+    </div>
+</header>
 
     <!-- Advantages Section -->
     <section id="advantages" class="section dark">
-        <div class="container narrow">
+        <div class="container wide">
             <h2>Key Advantages</h2>
             <div class="adv-grid">
+
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path></svg>
+                    </div>
                     <h3>Compact History Architecture</h3>
                     <p>Snapshot-based external backups miss changes between snapshots. Record-per-change systems grow storage with every update. UndoEngine avoids both: one ~2 KB log per record, natively inside Salesforce, capturing the complete field history.</p>
                 </div>
 
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
+                    </div>
                     <h3>Flow-First Configuration</h3>
                     <p>Connect any standard or custom object in under 90 seconds using ready-to-use Flow templates — no Apex to write or maintain.</p>
-                </div>
+                </div><!-- 
 
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
+                    </div>
                     <h3>Flexible Tracking</h3>
                     <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
+                </div> -->
+
+                <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-9.36L1 10"></path></svg>
+                    </div>
+                    <h3>Flexible Tracking, Back up and Restore</h3>
+                    <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
+                    <p>Back up field changes, restore records and files individually or in bulk.</p>
                 </div>
 
                 <div class="adv-card fade-in">
-                    <h3>Back up and Restore</h3>
-                    <p>Back up field changes, restore records and files individually or in bulk</p>
-                </div>
-
-                <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                    </div>
                     <h3>Full Control</h3>
                     <p>Configure everything from the UI — history length, number of tracked fields, async mode, batch sizes, and more.</p>
                 </div>
 
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"></path></svg>
+                    </div>
                     <h3>Custom List View</h3>
-                    <p>
-                        Unlike standard Salesforce List Views, this feature emulates List View behavior, bypassing platform limits. Includes a powerful SOQL-based engine and an exclusive <span class="feature-highlight">Geolocation</span> filter with special
-                        operators.
-                    </p>
+                    <p>Unlike standard Salesforce List Views, this feature emulates List View behavior, bypassing platform limits. Includes a powerful SOQL-based engine and an exclusive <span class="feature-highlight">Geolocation</span> filter with special operators.</p>
                 </div>
 
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
                     <h3>Thoughtful UX Design</h3>
-                    <p>
-                        UndoEngine prioritizes user experience with contextual tooltips and help texts throughout the interface. Data is displayed according to each user’s Salesforce locale, respecting date/time formats and time zones. Hover over values to see the exact UTC
-                        format stored in JSON — ensuring clarity for users and transparency for admins.
-                    </p>
+                    <p>UndoEngine prioritizes user experience with contextual tooltips and help texts throughout the interface. Data is displayed according to each user's Salesforce locale, respecting date/time formats and time zones. Hover over values to see the exact UTC format stored in JSON — ensuring clarity for users and transparency for admins.</p>
                 </div>
+
                 <div class="adv-card fade-in">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
                     <h3>Built for Salesforce Scale</h3>
-                    <p>
-                        UndoEngine is designed to operate safely at enterprise scale. Asynchronous processing, configurable batch sizes and optimized history storage ensure reliable performance. The architecture respects Salesforce governor
-                        limits while providing powerful recovery and auditing capabilities for administrators.
-                    </p>
+                    <p>UndoEngine is designed to operate safely at enterprise scale. Asynchronous processing, configurable batch sizes and optimized history storage ensure reliable performance. The architecture respects Salesforce governor limits while providing powerful recovery and auditing capabilities for administrators.</p>
                 </div>
+
                 <div class="adv-card fade-in">
-                    <h3>Built-in Documentation & Tutorial</h3>
-                    <p>
-                        UndoEngine comes with comprehensive built-in documentation right inside the package. All features, settings, and instructions are well-structured and easily accessible via a dedicated left-hand tab, making it simple for users and administrators to get
-                        started without needing external resources.
-                    </p>
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                    <h3>Built-in Documentation &amp; Tutorial</h3>
+                    <p>UndoEngine comes with comprehensive built-in documentation right inside the package. All features, settings, and instructions are well-structured and easily accessible via a dedicated left-hand tab, making it simple for users and administrators to get started without needing external resources.</p>
                 </div>
+
             </div>
+        </div>
     </section>
 
-    <!-- <section class="section announcement">
-        <div class="container">
-
-            <div class="badge upcoming-badge">
-                🚀 Upcoming Feature
-            </div>
-
-            <h2>
-                <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare Integration</a>
-            </h2>
-
-            <p class="lead">
-                Soon you'll be able to back up and restore Salesforce Files using your own Cloudflare storage.
-                Your data stays under your control. UndoEngine handles the integration.
-            </p>
-
-            <img
-                src="images/cloudflare-announcement.png"
-                alt="UndoEngine Cloudflare Integration"
-                class="announcement-banner">
-
-            <p class="lead">
-                Cloudflare is a registered trademark of Cloudflare, Inc. UndoEngine is not affiliated with or endorsed by Cloudflare.
-            </p>
-
-        </div>
-    </section> -->
-    
     <section id="features" class="section">
         <div class="container">
             <h2>Main Features</h2>
 
             <div class="two-col fade-in">
-                <img src="images/history-viewer.png" alt="Record History Viewer" class="product-image small right">
-                <div>
+                <div class="two-col-media">
+                    <img src="images/history-viewer.png" alt="Record History Viewer" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">01 — Timeline</span>
                     <h3>Record History Viewer</h3>
                     <p>See exactly what changed, when, and by whom — then undo just the part that was wrong.</p>
                     <ul class="checklist">
                         <li>Field-by-field navigation</li>
-                        <li>User & date filters</li>
+                        <li>User &amp; date filters</li>
                         <li>Rollback a single field, a set of fields, or restore the entire record</li>
                         <li>Interactive arrows for history timeline</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="two-col reverse fade-in">
-                <img src="images/mass-undo.png" alt="Mass Restore Interface" class="product-image large left">
-                <div>
+            <div class="two-col fade-in flip">
+                <div class="two-col-media">
+                    <img src="images/mass-undo.png" alt="Mass Restore Interface" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">02 — Bulk recovery</span>
                     <h3>Mass Restore Interface</h3>
                     <p>Fix a bad bulk update across thousands of records without hitting Salesforce list view limits.</p>
                     <ul class="checklist">
@@ -164,8 +195,11 @@
             </div>
 
             <div class="two-col fade-in">
-                <img src="images/settings-page.png" alt="Settings UI" class="product-image large right">
-                <div>
+                <div class="two-col-media">
+                    <img src="images/settings-page.png" alt="Settings UI" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">03 — Configuration</span>
                     <h3>Settings UI</h3>
                     <p>Tune UndoEngine to your org's scale and risk tolerance.</p>
                     <ul class="checklist">
@@ -177,9 +211,12 @@
                 </div>
             </div>
 
-            <div class="two-col reverse fade-in">
-                <img src="images/log-manager.png" alt="Log Manager" class="product-image large left">
-                <div>
+            <div class="two-col fade-in flip">
+                <div class="two-col-media">
+                    <img src="images/log-manager.png" alt="Log Manager" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">04 — Log control</span>
                     <h3>Log Manager</h3>
                     <p>Stay in control of what's tracked and recoverable, including deletions.</p>
                     <ul class="checklist">
@@ -190,8 +227,11 @@
             </div>
 
             <div class="two-col fade-in">
-                <img src="images/encryption-manager.png" alt="Data Security Manager" class="product-image large right">
-                <div>
+                <div class="two-col-media">
+                    <img src="images/encryption-manager.png" alt="Data Security Manager" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">05 — Security</span>
                     <h3>Data Security Manager</h3>
                     <p>Keep tracked history encrypted and compliant with your org's security policy.</p>
                     <ul class="checklist">
@@ -202,11 +242,14 @@
                 </div>
             </div>
 
-            <div class="two-col reverse fade-in">
-                <img src="images/file-backup.png" alt="File Backup" class="product-image large left">
-                <div>
+            <div class="two-col fade-in flip">
+                <div class="two-col-media">
+                    <img src="images/file-backup.png" alt="File Backup" class="product-image">
+                </div>
+                <div class="two-col-copy">
+                    <span class="eyebrow">06 — Files</span>
                     <h3>Mass File Backup (R2 Integration)</h3>
-                    <p>Everything you need for a complete recovery</p>
+                    <p>Everything you need for a complete recovery.</p>
                     <ul class="checklist">
                         <li>Attachments</li>
                         <li>ContentVersions</li>
@@ -224,65 +267,64 @@
     <section id="comparison" class="section dark">
         <div class="container">
             <h2>Platform Comparison</h2>
-            <table class="comparison fade-in">
-                <thead>
-                    <tr>
-                        <th>Capability</th>
-                        <th>Snapshot-Based Backup</th>
-                        <th>Change Tracking / Audit Logging</th>
-                        <th class="highlight-col">UndoEngine</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Rollback Precision</td>
-                        <td>Imprecise — incidents rarely align with snapshot timing; valid changes after the snapshot are lost, or part of the corrupted state remains</td>
-                        <td>Theoretically any state can be reconstructed, but in practice this requires significant manual effort</td>
-                        <td class="highlight-col"><strong>✔ Point-in-time rollback at field or record level, without losing valid changes</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Storage Volume</td>
-                        <td>External storage — doesn't burden the org, but stores full state copies rather than just changes</td>
-                        <td>~2 KB per change — storage grows proportionally with every update to a record</td>
-                        <td class="highlight-col"><strong>✔ ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Recovery</td>
-                        <td>All-or-nothing — restores the entire state or object</td>
-                        <td>Data is technically available, but rollback often requires significant manual effort. No Salesforce file tracking</td>
-                        <td class="highlight-col"><strong>✔ Field, set of fields, single record, file or mass restore — your choice</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Incident Response</td>
-                        <td>Requires a full system restore, risking business downtime</td>
-                        <td>Exists only as an archive or log collection — doesn't form a unified layer to act on</td>
-                        <td class="highlight-col"><strong>✔ Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Adding New Objects to Tracking</td>
-                        <td>No development needed — object is selected via admin UI configuration</td>
-                        <td>Requires writing and integrating an Apex trigger for each new object before it can be tracked</td>
-                        <td class="highlight-col"><strong>✔ No development needed — any object connected in a few clicks via ready-to-use Flow templates</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Data Location</td>
-                        <td>Stored outside the Salesforce org</td>
-                        <td>Native, but as raw logs</td>
-                        <td class="highlight-col"><strong>✔ Native for objects — data stays inside the org. Your own R2 storage for files. UI to work with both</strong></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-scroll">
+                <table class="comparison fade-in">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Snapshot-Based Backup</th>
+                            <th>Change Tracking / Audit Logging</th>
+                            <th class="highlight-col">UndoEngine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rollback Precision</td>
+                            <td>Imprecise — incidents rarely align with snapshot timing; valid changes after the snapshot are lost, or part of the corrupted state remains</td>
+                            <td>Theoretically any state can be reconstructed, but in practice this requires significant manual effort</td>
+                            <td class="highlight-col"><span class="check">✔</span> Point-in-time rollback at field or record level, without losing valid changes</td>
+                        </tr>
+                        <tr>
+                            <td>Storage Volume</td>
+                            <td>External storage — doesn't burden the org, but stores full state copies rather than just changes</td>
+                            <td>~2 KB per change — storage grows proportionally with every update to a record</td>
+                            <td class="highlight-col"><span class="check">✔</span> ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</td>
+                        </tr>
+                        <tr>
+                            <td>Recovery</td>
+                            <td>All-or-nothing — restores the entire state or object</td>
+                            <td>Data is technically available, but rollback often requires significant manual effort. No Salesforce file tracking</td>
+                            <td class="highlight-col"><span class="check">✔</span> Field, set of fields, single record, file or mass restore — your choice</td>
+                        </tr>
+                        <tr>
+                            <td>Incident Response</td>
+                            <td>Requires a full system restore, risking business downtime</td>
+                            <td>Exists only as an archive or log collection — doesn't form a unified layer to act on</td>
+                            <td class="highlight-col"><span class="check">✔</span> Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</td>
+                        </tr>
+                        <tr>
+                            <td>Adding New Objects to Tracking</td>
+                            <td>No development needed — object is selected via admin UI configuration</td>
+                            <td>Requires writing and integrating an Apex trigger for each new object before it can be tracked</td>
+                            <td class="highlight-col"><span class="check">✔</span> No development needed — any object connected in a few clicks via ready-to-use Flow templates</td>
+                        </tr>
+                        <tr>
+                            <td>Data Location</td>
+                            <td>Stored outside the Salesforce org</td>
+                            <td>Native, but as raw logs</td>
+                            <td class="highlight-col"><span class="check">✔</span> Native for objects — data stays inside the org. Your own R2 storage for files. UI to work with both</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
     <!-- Live Demo -->
     <section class="section dark">
-        <div>
+        <div class="container narrow" style="text-align:center;">
             <h2>Live Product Demo</h2>
-
-            <p class="lead">
-                Watch the full product walkthrough on our<a href="https://www.youtube.com/@UndoEngine" target="_blank">YouTube channel</a>
-            </p>
+            <p class="lead">Watch the full product walkthrough on our <a href="https://www.youtube.com/@UndoEngine" target="_blank">YouTube channel</a></p>
 
             <div class="video-wrapper">
                 <iframe
@@ -296,27 +338,27 @@
 
     <!-- Product Editions Section -->
     <section class="section">
-        <div class="container">
+        <div class="container narrow">
             <h2>Product Editions</h2>
-            <table class="comparison fade-in">
-                <thead>
-                    <tr>
-                        <th class="feature-highlight">Partner — negotiable pricing</th>
-                        <th class="highlight-col feature-highlight">Premium — $449 / month per Salesforce org</th>
-                        <th class="highlight-col feature-highlight">Enterprise — custom pricing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Flexible collaboration model with customized terms based on partnership scope, including referral, or consulting</td>
-                        <td>Full-featured UndoEngine plan providing complete access to data recovery capabilities for Salesforce environments</td>
-                        <td>Advanced tier with priority support, direct engineering access, custom onboarding, and influence on product roadmap</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="help-text">
-                 Final pricing is confirmed at checkout before payment. Prices shown above may vary depending on the terms selected; the exact amount will always be displayed for your review and confirmation before your purchase is finalized.
-            </p>
+            <div class="pricing-grid fade-in">
+                <div class="price-card">
+                    <h3>Partner</h3>
+                    <p class="price-tag">Negotiable pricing</p>
+                    <p class="price-desc">Flexible collaboration model with customized terms based on partnership scope, including referral, or consulting.</p>
+                </div>
+                <div class="price-card featured">
+                    <span class="price-badge">Most popular</span>
+                    <h3>Premium</h3>
+                    <p class="price-tag">$449<span>/mo per org</span></p>
+                    <p class="price-desc">Full-featured UndoEngine plan providing complete access to data recovery capabilities for Salesforce environments.</p>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <p class="price-tag">Custom pricing</p>
+                    <p class="price-desc">Advanced tier with priority support, direct engineering access, custom onboarding, and influence on product roadmap.</p>
+                </div>
+            </div>
+            <p class="help-text">Final pricing is confirmed at checkout before payment. Prices shown above may vary depending on the terms selected; the exact amount will always be displayed for your review and confirmation before your purchase is finalized.</p>
         </div>
     </section>
 
@@ -328,14 +370,13 @@
                 </button>
             </div>
             <p class="help-text">
-                After submitting the form, you will receive your installation URL and follow-up instructions with activation steps and payment details. <span class="feature-highlight">Free to use on sandboxes</span></span>
+                After submitting the form, you will receive your installation URL and follow-up instructions with activation steps and payment details. <span class="feature-highlight">Free to use on sandboxes</span>
             </p>
         </div>
     </section>
 
-
-    <section class="section demo-request-section">
-        <div class="container narrow">
+    <section class="section demo-request-section dark">
+        <div class="container narrow" style="text-align:center;">
             <p>
                 Support:
                 <a href="mailto:support@undoengine.com" id="email-text" class="feature-highlight allow-select">

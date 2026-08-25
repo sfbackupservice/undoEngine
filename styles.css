@@ -1,242 +1,760 @@
-/* Базові стилі залишаються твоїми */
+:root {
+    --bg: #0a0e14;
+    --surface: #12161f;
+    --surface-2: #161b26;
+    --border: #232838;
+    --text: #e8eaf0;
+    --text-muted: #8b93a7;
+    --accent: #4c7cf0;
+    --accent-soft: #4c7cf022;
+    --accent-2: #f0a34c;
+    --success: #4cdb8f;
+    --font-display: 'Space Grotesk', 'Inter', Arial, sans-serif;
+    --font-body: 'Inter', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: 'Inter', Arial, sans-serif;
-    background: #0b0d12;
-    color: #e6e8ee;
-    -webkit-user-select: none;
-    user-select: none;
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
 }
 
-h1 {
-    text-align: center;
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
-h2 {
-    text-align: center;
-}
-
-a {
-    color: #7fb3ff;
-    text-decoration: none;
-    margin: 0 8px;
-    font-weight: 500;
-}
-
-a:hover {
-    color: #7fb3ff;
-    text-decoration: none;
-}
-
-.allow-select {
-    user-select: text;
-}
-
-
-/* Гнучкий контейнер */
-
-.container {
-    width: 92%;
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.container.narrow {
-    max-width: 850px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-
-/* Hero секція */
-
-.hero {
-    padding: 100px 20px 60px 20px;
-    text-align: center;
-    background: radial-gradient(circle at top, #1a1d26, #0b0d12);
-}
-
-.badge {
-    display: inline-block;
-    background: #1f2430;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.product-logo-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    width: 100%;
-}
-
-.product-logo {
-    max-width: 120px; /* або інший розмір, щоб не переважав заголовок */
-    display: inline-block;
-    margin-bottom: 20px; 
-    margin-right: 20px;
-}
-
-.hero-sub {
-    font-size: 18px;
-    color: #9aa3b2;
-    max-width: 700px;
-    margin: auto;
-}
-
-.hero-buttons {
-    margin-top: 30px;
-}
-
-
-/* Кнопки */
-
-.primary-btn,
-.secondary-btn {
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.primary-btn {
-    background: #5b8cff;
-    color: #fff;
-}
-
-.primary-btn:hover {
-    background: #7fa8ff;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.secondary-btn {
-    border: 1px solid #3a3f4b;
-    color: #1f2430;
-    background: #fff;
-}
-
-.secondary-btn:hover {
-    background: #1f2430;
-    transform: translateY(-2px);
-    color: #fff;
-}
-
-
-/* Секції */
-
-.section {
-    padding: 80px 20px;
-}
-
-.section.dark {
-    background: #11131a;
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 h2 {
+    text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.lead {
-    color: #9aa3b2;
-    margin-bottom: 30px;
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover { text-decoration: underline; }
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 2px;
+}
+
+.allow-select { user-select: text; }
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container.narrow {/* 
+    max-width: 850px; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container.wide {
+    max-width: none;
 }
 
 
-/* Key Advantages - адаптивна сітка */
+/* ===== Hero ===== */
+
+.hero {
+    position: relative;
+    padding: 110px 20px 70px 20px;
+    background: radial-gradient(circle at 20% 0%, #161c2c 0%, var(--bg) 55%);
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 70px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 225px;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    animation: logo-pulse 8s ease-in-out infinite;
+}
+
+.hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 28px;
+}
+
+@keyframes logo-pulse {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    20%,
+    80% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+    }
+
+    .hero-logo {
+        left: 82%;
+    }
+
+    .hero-logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .ticker-line,
+    .ticker-item {
+        left: 82%;
+    }
+}
+
+.hero-copy {
+    max-width: 560px;
+}
+
+.product-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.product-logo {
+    max-width: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 16px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 0 0 20px 0;
+}
+
+.hero-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin: 0 0 30px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-links {
+    margin-top: 16px;
+}
+
+
+/* ===== Hero ticker ===== */
+
+.hero-ticker {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ticker-line {
+    position: absolute;
+    left: 70%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--border) 12%,
+        var(--border) 88%,
+        transparent
+    );
+    box-shadow: 0 0 8px #f0a34c55;
+    animation: ticker-line-pulse 8s ease-in-out infinite;
+    z-index: 2;
+}
+
+.ticker-item {
+    position: absolute;
+    left: 70%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: ticker-flow 8s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+    z-index: 3;
+}
+
+.ticker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 0 3px #f0a34c22;
+}
+
+.ticker-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+@keyframes ticker-flow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 6px);
+    }
+
+    15% {
+        opacity: 0.9;
+        transform: translate(-50%, 0);
+    }
+
+    85% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -6px);
+    }
+}
+
+@keyframes ticker-line-pulse {
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+
+    20%,
+    80% {
+        opacity: 0.9;
+    }
+}
+
+
+/* ===== Buttons ===== */
+
+.primary-btn,
+.secondary-btn {
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    display: inline-block;
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 16px #4c7cf03a;
+}
+
+.primary-btn:hover {
+    background: #6a95ff;
+    color: #fff;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 8px 22px #4c7cf055;
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+.secondary-btn:hover {
+    background: var(--surface);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    color: var(--text);
+    text-decoration: none;
+}
+
+
+/* ===== Sections ===== */
+
+.section { padding: 80px 20px; }
+.section.dark { background: var(--surface); }
+
+.lead {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-2);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+
+/* ===== Key Advantages ===== */
 
 .adv-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    text-align: center;
 }
 
 .adv-card {
-    background: #161a22;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: 270px;
+    min-height: 370px;
+    margin: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: var(--radius);
+    transition: transform 0.25s ease, box-shadow 0.35s ease;
 }
 
 .adv-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(91, 140, 255, 0.3);
+    transform: translateY(-4px);
+    border-color: var(--border);
+    box-shadow:
+        0 0 20px #4c7cf020,
+        0 0 45px #4c7cf012;
+}
+.adv-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
 }
 
+.adv-icon svg { width: 19px; height: 19px; }
 
-/* Двоколонкові блоки Main Features */
+.adv-card h3 { font-size: 17px; margin: 0 0 8px 0; }
+.adv-card p { color: var(--text-muted); font-size: 14.5px; margin: 0; }
+
+
+/* ===== Main Features (two-col) ===== */
 
 .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
-    margin: 60px 0;
+    margin: 70px 0;
 }
 
-.two-col.reverse {
-    direction: rtl;
+.two-col.flip .two-col-media { order: 2; }
+.two-col.flip .two-col-copy { order: 1; }
+
+.two-col-media {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    overflow: hidden;
 }
-
-.two-col.reverse div {
-    direction: ltr;
-}
-
-
-/* Зображення продукту з масштабуванням по origin */
 
 .product-image {
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-image.left {
-    transform-origin: right center;
-}
-
-.product-image.right {
-    transform-origin: left center;
-}
-
-.product-image.center {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
     transform-origin: center center;
 }
 
-.product-image:hover {
-    transform: scale(1.4);
-    box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35);
+.two-col-media:hover .product-image {
+    transform: scale(1.06);
+}
+
+.two-col-copy h3 { font-size: 22px; margin: 0 0 10px 0; }
+.two-col-copy p { color: var(--text-muted); }
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.checklist li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-size: 13px;
 }
 
 
-/* Розміри зображень */
+/* ===== Comparison table ===== */
 
-.small {
-    width: 300px;
+.table-scroll { overflow-x: auto; }
+
+.comparison {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
+
+.comparison th,
+.comparison td {
+    border: 1px solid var(--border);
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.comparison th {
+    background: var(--surface-2);
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-align: left;
+}
+
+.highlight-col {
+    background: #1a2340;
+    color: #fff;
+}
+
+.comparison th.highlight-col { color: var(--accent-2); }
+
+.check {
+    color: var(--success);
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+
+/* ===== Video ===== */
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+
+/* ===== Pricing ===== */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.price-card {
+    position: relative;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    text-align: center;
+}
+
+.price-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, #1a2340, var(--surface-2) 60%);
+}
+
+.price-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-2);
+    color: #1a1204;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: var(--font-mono);
+}
+
+.price-card h3 { font-size: 18px; margin: 6px 0 10px 0; }
+
+.price-tag {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    color: var(--accent-2);
+    margin: 0 0 12px 0;
+}
+
+.price-tag span {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.price-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.store-button-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-text {
+    text-align: center;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.feature-highlight {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: var(--accent-2);
+    font-weight: 500;
+}
+
+.demo-request-section p { margin-bottom: 14px; }
+
+#footer {
+    min-height: 120px;
+    background: #06070a;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ===== Motion ===== */
+
+.fade-in {
+    animation: fade-in-up 0.5s ease both;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 38px; }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ticker-line,
+    .ticker-item {
+        left: 82%;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px 40px 20px;
+    }
+
+    .hero h1 { font-size: 30px; }
+    .hero-sub { font-size: 15px; }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn {
+        text-align: center;
+    }
+
+    .ticker-line,
+    .ticker-item {
+        left: 90%;
+    }
+
+    .hero-logo {
+        left: 90%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .ticker-label {
+        font-size: 10px;
+    }
+
+    .two-col,
+    .two-col.flip {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .two-col.flip .two-col-media,
+    .two-col.flip .two-col-copy {
+        order: initial;
+    }
+
+    .adv-card {
+        width: 100%;
+        min-height: 0;
+        margin: 8px 0;
+    }
+
+    .comparison th,
+    .comparison td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    h2 { font-size: 24px; }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .product-image { width: 90%; }
+    .two-col-media .product-image { width: 100%; }
+    .video-demo { width: 100%; }
+
+    .demo-request-section ul { padding-left: 15px; }
+
+    .demo-request-section p,
+    .demo-request-section ul {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================================================
+   LEGACY / SITE-WIDE COMPATIBILITY
+   Selectors below are kept from the original stylesheet
+   because other pages on the site (e.g. why.html) still
+   reference them. Do not remove without checking every
+   page that links this file.
+   ========================================================= */
+
+.small { width: 300px; }
 
 .large {
     width: 500px;
     height: auto;
 }
 
-
-/* Відео */
+.product-image.left { transform-origin: right center; }
+.product-image.right { transform-origin: left center; }
+.product-image.center { transform-origin: center center; }
 
 .video-demo {
     width: 80%;
@@ -253,91 +771,22 @@ h2 {
     box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35);
 }
 
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
+/* Old two-col reverse (rtl trick) — kept for pages using the
+   original markup (image + div as direct children, no
+   .two-col-media/.two-col-copy wrappers). New pages should
+   use .two-col.flip instead. */
 
-.video-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
 
-.video-wrapper:hover {
-    box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35);
-}
-
-
-.comparison {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.comparison th,
-.comparison td {
-    border: 1px solid #2a2f3b;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.comparison th {
-    background: #1b1f29;
-}
-
-.highlight-col {
-    background: #1f2a44;
-    color: white;
+.strong {
     font-weight: 500;
+    color: var(--accent);
 }
 
-.highlight-col strong {
-    color: #7fb3ff;
-}
-
-.strong{
-    font-weight: 500;
-    color: #7fb3ff;
-}
-
-.store-button-container{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.warning-text{
+.warning-text {
     font-weight: 500;
     color: #FFC107;
-}
-
-
-/* Footer */
-
-footer {
-    background: #06070a;
-    padding: 40px 20px;
-    text-align: center;
-    color: #7c8596;
-}
-
-.feature-highlight {
-    word-break: break-word;
-    overflow-wrap: break-word;
-    color: #7fb3ff;
-    /* світлий синьо-фіолетовий */
-    font-weight: 500;
-    /* трохи жирніше для акценту */
 }
 
 .pages-links {
@@ -348,24 +797,18 @@ footer {
     justify-content: space-around;
 }
 
-.promo-image{
-    width: 100%;
+.promo-image { width: 100%; }
+
+.footer-link { 
+    white-space: nowrap; 
+    padding: 10px;
 }
 
-.help-text{
+footer {
+    background: #06070a;
+    padding: 40px 20px;
     text-align: center;
-    margin-top: 0.75rem;
-    padding: 0.75rem 1rem;
-
-    font-size: 0.85rem;
-    line-height: 1.4;
-
-    color: rgba(255, 255, 255, 0.75);
-
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 10px;
+    color: #7c8596;
 }
 
 .announcement {
@@ -390,6 +833,7 @@ footer {
     border-radius: 18px;
     box-shadow: 0 20px 50px rgba(0,0,0,.15);
 }
+
 .announcement h2 a {
     color: inherit;
     text-decoration: none;
@@ -397,105 +841,10 @@ footer {
 }
 
 .announcement h2 a:hover {
-    color: #f38020; /* Cloudflare orange */
+    color: #f38020;
 }
-
-/* Медіа-запити */
-
-
-/* Планшети */
-
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-    .hero-sub {
-        font-size: 16px;
-    }
-    .two-col {
-        gap: 30px;
-        grid-template-columns: 1fr 1fr;
-    }
-    .adv-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.footer-link{
-    white-space: nowrap;
-}
-
-
-/* Мобільні телефони */
 
 @media (max-width: 768px) {
-    .hero {
-        padding: 80px 20px 40px 20px;
-    }
-    .hero h1 {
-        font-size: 28px;
-    }
-    .hero-sub {
-        font-size: 14px;
-        max-width: 90%;
-    }
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 20px;
-    }
-    .product-image {
-        width: 90%;
-    }
-    .product-image:hover {
-        transform: scale(1.1);
-    }
-    .video-demo {
-        width: 100%;
-    }
-    /* Main Features: текст над картинкою */
-    .two-col,
-    .two-col.reverse {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        direction: ltr;
-    }
-    .two-col.reverse div:first-child {
-        order: 1;
-    }
-    .two-col.reverse div:last-child {
-        order: 2;
-    }
-    /* Key Advantages: 1 колонка на мобільних */
-    .adv-grid {
-        grid-template-columns: 1fr;
-    }
-    .comparison th,
-    .comparison td {
-        font-size: 12px;
-        padding: 8px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    .adv-card {
-        padding: 15px;
-    }
-    .demo-request-section ul {
-        padding-left: 15px;
-    }
-    .demo-request-section p,
-    .demo-request-section ul {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-    .primary-btn,
-    .secondary-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
-    }
+    .two-col.reverse div:first-child { order: 1; }
+    .two-col.reverse div:last-child { order: 2; }
 }
