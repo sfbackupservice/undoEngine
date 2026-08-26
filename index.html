@@ -95,15 +95,7 @@
                     </div>
                     <h3>Flow-First Configuration</h3>
                     <p>Connect any standard or custom object in under 90 seconds using ready-to-use Flow templates — no Apex to write or maintain.</p>
-                </div><!-- 
-
-                <div class="adv-card fade-in">
-                    <div class="adv-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
-                    </div>
-                    <h3>Flexible Tracking</h3>
-                    <p>Track changes, preview them in a timeline, filter history, and undo updates for any editable fields on any object.</p>
-                </div> -->
+                </div>
 
                 <div class="adv-card fade-in">
                     <div class="adv-icon">
@@ -272,47 +264,47 @@
                     <thead>
                         <tr>
                             <th>Capability</th>
+                            <th class="highlight-col">UndoEngine</th>
                             <th>Snapshot-Based Backup</th>
                             <th>Change Tracking / Audit Logging</th>
-                            <th class="highlight-col">UndoEngine</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Rollback Precision</td>
+                            <td class="highlight-col"><span class="check">✔</span> Point-in-time rollback at field or record level, without losing valid changes</td>
                             <td>Imprecise — incidents rarely align with snapshot timing; valid changes after the snapshot are lost, or part of the corrupted state remains</td>
                             <td>Theoretically any state can be reconstructed, but in practice this requires significant manual effort</td>
-                            <td class="highlight-col"><span class="check">✔</span> Point-in-time rollback at field or record level, without losing valid changes</td>
                         </tr>
                         <tr>
                             <td>Storage Volume</td>
+                            <td class="highlight-col"><span class="check">✔</span> ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</td>
                             <td>External storage — doesn't burden the org, but stores full state copies rather than just changes</td>
                             <td>~2 KB per change — storage grows proportionally with every update to a record</td>
-                            <td class="highlight-col"><span class="check">✔</span> ~2 KB per record (one log per record, not per change) — storage stays virtually flat regardless of how many changes occur</td>
                         </tr>
                         <tr>
                             <td>Recovery</td>
+                            <td class="highlight-col"><span class="check">✔</span> Field, set of fields, single record, file or mass restore — your choice</td>
                             <td>All-or-nothing — restores the entire state or object</td>
                             <td>Data is technically available, but rollback often requires significant manual effort. No Salesforce file tracking</td>
-                            <td class="highlight-col"><span class="check">✔</span> Field, set of fields, single record, file or mass restore — your choice</td>
                         </tr>
                         <tr>
                             <td>Incident Response</td>
+                            <td class="highlight-col"><span class="check">✔</span> Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</td>
                             <td>Requires a full system restore, risking business downtime</td>
                             <td>Exists only as an archive or log collection — doesn't form a unified layer to act on</td>
-                            <td class="highlight-col"><span class="check">✔</span> Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</td>
                         </tr>
                         <tr>
                             <td>Adding New Objects to Tracking</td>
+                            <td class="highlight-col"><span class="check">✔</span> No development needed — any object connected in a few clicks via ready-to-use Flow templates</td>
                             <td>No development needed — object is selected via admin UI configuration</td>
                             <td>Requires writing and integrating an Apex trigger for each new object before it can be tracked</td>
-                            <td class="highlight-col"><span class="check">✔</span> No development needed — any object connected in a few clicks via ready-to-use Flow templates</td>
                         </tr>
                         <tr>
                             <td>Data Location</td>
+                            <td class="highlight-col"><span class="check">✔</span> Native for objects — data stays inside the org. Your own R2 storage for files. UI to work with both</td>
                             <td>Stored outside the Salesforce org</td>
                             <td>Native, but as raw logs</td>
-                            <td class="highlight-col"><span class="check">✔</span> Native for objects — data stays inside the org. Your own R2 storage for files. UI to work with both</td>
                         </tr>
                     </tbody>
                 </table>
