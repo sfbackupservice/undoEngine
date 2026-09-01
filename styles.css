@@ -26,6 +26,10 @@ body {
     line-height: 1.55;
 }
 
+h1{
+    text-align: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -844,6 +848,16 @@ footer {
 
 .announcement h2 a:hover {
     color: #f38020;
+}
+
+.promo-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-image {
+    width: 70%;
 }
 
 @media (max-width: 768px) {
