@@ -1,0 +1,168 @@
+
+
+/* =========================================================
+   KNOWN ISSUES PAGE (known-issues.html)
+   All selectors are prefixed with .ki- and variables with
+   --ki-, so nothing here collides with the rules above.
+   ========================================================= */
+
+.ki {
+    --ki-surface: #12161f;
+    --ki-surface-2: #161b26;
+    --ki-border: #232838;
+    --ki-text: #e8eaf0;
+    --ki-muted: #8b93a7;
+    --ki-accent: #4c7cf0;
+    --ki-danger: #e5534b;
+    --ki-success: #4cdb8f;
+    --ki-success-bg: #4cdb8f1a;
+}
+
+.ki-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ki-header {
+    padding: 56px 0 28px 0;
+}
+
+.ki-header p {
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    color: var(--ki-accent);
+}
+
+.ki-header h1 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+
+/* ===== Latest version ===== */
+
+.ki-release {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 20px;
+    background: var(--ki-surface-2);
+    border: 1px solid var(--ki-border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+}
+
+.ki-version {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ki-text);
+}
+
+.ki-released {
+    color: var(--ki-muted);
+}
+
+
+/* ===== Issues list ===== */
+
+.ki-list {
+    list-style: none;
+    margin: 0 0 56px 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.ki-issue {
+    background: var(--ki-surface);
+    border: 1px solid var(--ki-border);
+    border-left: 5px solid var(--ki-danger);
+    border-radius: 10px;
+    color: var(--ki-text);
+}
+
+.ki-issue summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.ki-issue summary::-webkit-details-marker {
+    display: none;
+}
+
+.ki-issue summary::after {
+    content: "+";
+    flex: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--ki-muted);
+}
+
+.ki-issue details[open] > summary::after {
+    content: "\2013";
+}
+
+.ki-issue summary:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: -2px;
+    border-radius: 8px;
+}
+
+.ki-body {
+    padding: 14px 20px 18px 20px;
+    border-top: 1px solid var(--ki-border);
+}
+
+.ki-body p {
+    margin: 0;
+    max-width: 68ch;
+    color: var(--ki-muted);
+}
+
+.ki-workaround {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--ki-success-bg);
+    border-radius: 8px;
+    color: var(--ki-text);
+}
+
+.ki-workaround strong {
+    color: var(--ki-success);
+}
+
+.ki-issue code {
+    background: #ffffff14;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+.ki-empty {
+    color: var(--ki-muted);
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+    .ki-header {
+        padding-top: 36px;
+    }
+}
