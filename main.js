@@ -21,11 +21,11 @@ function goToStore() {
 }
 
 function makeOrder() {
-    window.open('https://undoengine.my.site.com/s/order', '_blank');
+    window.open('https://undoengine.my.site.com/s/order', '_self');
 }
 
 function checkUpgrade() {
-    window.open('https://undoengine.my.site.com/s/upgrade', '_blank');
+    window.open('https://undoengine.my.site.com/s/upgrade', '_self');
 }
 
 function loadFooter() {
