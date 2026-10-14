@@ -603,6 +603,7 @@ button:focus-visible {
     width: 100%;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
 .help-text {

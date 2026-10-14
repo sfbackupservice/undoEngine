@@ -24,6 +24,10 @@ function makeOrder() {
     window.open('https://undoengine.my.site.com/s/order', '_blank');
 }
 
+function checkUpgrade() {
+    window.open('https://undoengine.my.site.com/s/upgrade', '_blank');
+}
+
 function loadFooter() {
     fetch('/footer.html')
         .then(res => res.text())
