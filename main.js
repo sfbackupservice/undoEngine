@@ -28,6 +28,10 @@ function checkUpgrade() {
     window.open('https://undoengine.my.site.com/s/upgrade', '_self');
 }
 
+function reportIssue() {
+    window.open('https://undoengine.my.site.com/s/issues', '_self');
+}
+
 function loadFooter() {
     fetch('/footer.html')
         .then(res => res.text())
