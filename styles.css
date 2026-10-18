@@ -24,6 +24,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.55;
+    padding-bottom: 72px;
 }
 
 h1{
@@ -859,9 +860,33 @@ footer {
 
 .promo-image {
     width: 70%;
+}.sticky-actions {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 10px 16px;
+    background: rgba(10, 14, 20, 0.88);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+}
+
+.sticky-actions .primary-btn,
+.sticky-actions .secondary-btn {
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
     .two-col.reverse div:first-child { order: 1; }
     .two-col.reverse div:last-child { order: 2; }
+    .sticky-actions .store-button-container { gap: 8px; }
+    .sticky-actions .primary-btn,
+    .sticky-actions .secondary-btn {
+        width: auto;
+        flex: 1;
+        padding: 10px 6px;
+        font-size: 12px;
+    }
 }

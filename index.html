@@ -354,17 +354,6 @@
 
     <section class="section">
         <div class="container">
-            <div class="store-button-container">
-                <button class="primary-btn copy-btn" onclick="makeOrder()">
-                    Get UndoEngine Offer
-                </button>
-                <button class="secondary-btn copy-btn" onclick="checkUpgrade()">
-                    Update Your Package
-                </button>
-                <button class="secondary-btn copy-btn" onclick="reportIssue()">
-                    Report Issue
-                </button>
-            </div>
             <p class="help-text">
                 After you submit the form, we will contact you with a commercial offer for your org. Once it is agreed, you will receive the installation URL and activation steps. <span class="feature-highlight">Free to use on sandboxes</span>
             </p>
@@ -385,6 +374,14 @@
             </button>
         </div>
     </section>
+
+    <div class="sticky-actions">
+        <div class="store-button-container">
+            <button class="primary-btn" onclick="makeOrder()">Get UndoEngine Offer</button>
+            <button class="secondary-btn" onclick="checkUpgrade()">Update Your Package</button>
+            <button class="secondary-btn" onclick="reportIssue()">Report Issue</button>
+        </div>
+    </div>
 
     <div id="footer"></div>
     <script src="main.js"></script>
