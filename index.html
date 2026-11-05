@@ -284,13 +284,13 @@
                         <tr>
                             <td>Recovery</td>
                             <td class="highlight-col"><span class="check">✔</span> Field, set of fields, single record, file or mass restore — your choice</td>
-                            <td>All-or-nothing — restores the entire state or object</td>
+                            <td>Restores records to their state at the last backup point. Changes made between backups can’t be recovered</td>
                             <td>Data is technically available, but rollback often requires significant manual effort. No Salesforce file tracking</td>
                         </tr>
                         <tr>
                             <td>Incident Response</td>
                             <td class="highlight-col"><span class="check">✔</span> Single operational layer — filter, isolate the specific incident, and act without restoring the whole system</td>
-                            <td>Requires a full system restore, risking business downtime</td>
+                            <td>Restores from a fixed point in time. Isolating a single incident means choosing between losing later valid changes or keeping part of the bad data</td>
                             <td>Exists only as an archive or log collection — doesn't form a unified layer to act on</td>
                         </tr>
                         <tr>
