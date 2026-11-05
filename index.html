@@ -115,6 +115,32 @@
     </div>
 </section>
 
+<!-- ===== Who it is for ===== -->
+<section class="section">
+    <div class="container">
+        <h2>Who it is for</h2>
+
+        <div class="audience-grid">
+            <div class="audience-card fade-in">
+                <h3>Salesforce admins</h3>
+                <p>Stop dreading mass updates. Roll back precisely, with a preview and an audit trail.</p>
+            </div>
+            <div class="audience-card fade-in">
+                <h3>Flow &amp; automation builders</h3>
+                <p>Ship changes with a safety net. If a flow misbehaves, undo what it touched.</p>
+            </div>
+            <div class="audience-card fade-in">
+                <h3>RevOps &amp; sales ops</h3>
+                <p>Answer “who changed this, and what was it before?” in seconds and keep the pipeline trustworthy.</p>
+            </div>
+            <div class="audience-card fade-in">
+                <h3>Security &amp; compliance</h3>
+                <p>Native storage, optional encryption with your own keys and a full change history.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Problems ===== -->
 <section id="problems" class="section dark">
     <div class="container">
@@ -175,6 +201,35 @@
     </div>
 </section>
 
+<!-- ===== Scenario (illustrative) ===== -->
+<section class="section dark">
+    <div class="container">
+        <h2>Monday morning, a flow overwrites your pipeline</h2>
+        <p class="lead">An illustrative scenario: a flow update changes the stage and amount on a large batch of opportunities.</p>
+
+        <div class="scenario fade-in">
+            <div class="scenario-col bad">
+                <h3>Without a rollback layer</h3>
+                <ul>
+                    <li>Restore last night’s snapshot and lose every valid change made since</li>
+                    <li>Or reconstruct old values by hand from reports and exports</li>
+                    <li>Business processes keep running on wrong data while you work</li>
+                    <li>Hours or days of admin time, and a lingering doubt about what is still wrong</li>
+                </ul>
+            </div>
+            <div class="scenario-col good">
+                <h3>With UndoEngine</h3>
+                <ul>
+                    <li>Filter the history by the user or automation and the time window of the incident</li>
+                    <li>Preview exactly which fields changed on which records</li>
+                    <li>Mass restore only the affected fields, with no list view row limits</li>
+                    <li>Export a CSV audit trail of everything that was restored</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== How it works ===== -->
 <section id="how" class="section">
     <div class="container">
@@ -201,30 +256,18 @@
     </div>
 </section>
 
-<!-- ===== Scenario (illustrative) ===== -->
-<section class="section dark">
-    <div class="container">
-        <h2>Monday morning, a flow overwrites your pipeline</h2>
-        <p class="lead">An illustrative scenario: a flow update changes the stage and amount on a large batch of opportunities.</p>
+<!-- ===== Storage calculator ===== -->
+<section class="section">
+    <div class="container narrow">
+        <h2>How much storage will it use?</h2>
+        <p class="lead">One log per record, not per change, so storage stays predictable no matter how often records are updated.</p>
 
-        <div class="scenario fade-in">
-            <div class="scenario-col bad">
-                <h3>Without a rollback layer</h3>
-                <ul>
-                    <li>Restore last night’s snapshot and lose every valid change made since</li>
-                    <li>Or reconstruct old values by hand from reports and exports</li>
-                    <li>Business processes keep running on wrong data while you work</li>
-                    <li>Hours or days of admin time, and a lingering doubt about what is still wrong</li>
-                </ul>
-            </div>
-            <div class="scenario-col good">
-                <h3>With UndoEngine</h3>
-                <ul>
-                    <li>Filter the history by the user or automation and the time window of the incident</li>
-                    <li>Preview exactly which fields changed on which records</li>
-                    <li>Mass restore only the affected fields, with no list view row limits</li>
-                    <li>Export a CSV audit trail of everything that was restored</li>
-                </ul>
+        <div class="calc fade-in">
+            <label for="calc-records">Tracked records: <strong id="calc-records-out">1 million</strong></label>
+            <input type="range" id="calc-records" min="0.1" max="50" step="0.1" value="1">
+            <div class="calc-result">
+                <span class="calc-value" id="calc-gb">≈ 2 GB</span>
+                <span class="calc-note">of Salesforce data storage (~2&nbsp;KB per tracked record). Only objects you connect are counted.</span>
             </div>
         </div>
     </div>
@@ -311,49 +354,6 @@
 
         <div class="center-cta">
             <a class="secondary-btn" href="technical.html">See all technical features, settings and comparison →</a>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Who it is for ===== -->
-<section class="section">
-    <div class="container">
-        <h2>Who it is for</h2>
-
-        <div class="audience-grid">
-            <div class="audience-card fade-in">
-                <h3>Salesforce admins</h3>
-                <p>Stop dreading mass updates. Roll back precisely, with a preview and an audit trail.</p>
-            </div>
-            <div class="audience-card fade-in">
-                <h3>Flow &amp; automation builders</h3>
-                <p>Ship changes with a safety net. If a flow misbehaves, undo what it touched.</p>
-            </div>
-            <div class="audience-card fade-in">
-                <h3>RevOps &amp; sales ops</h3>
-                <p>Answer “who changed this, and what was it before?” in seconds and keep the pipeline trustworthy.</p>
-            </div>
-            <div class="audience-card fade-in">
-                <h3>Security &amp; compliance</h3>
-                <p>Native storage, optional encryption with your own keys and a full change history.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Storage calculator ===== -->
-<section class="section">
-    <div class="container narrow">
-        <h2>How much storage will it use?</h2>
-        <p class="lead">One log per record, not per change, so storage stays predictable no matter how often records are updated.</p>
-
-        <div class="calc fade-in">
-            <label for="calc-records">Tracked records: <strong id="calc-records-out">1 million</strong></label>
-            <input type="range" id="calc-records" min="0.1" max="50" step="0.1" value="1">
-            <div class="calc-result">
-                <span class="calc-value" id="calc-gb">≈ 2 GB</span>
-                <span class="calc-note">of Salesforce data storage (~2&nbsp;KB per tracked record). Only objects you connect are counted.</span>
-            </div>
         </div>
     </div>
 </section>
