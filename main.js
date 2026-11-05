@@ -97,4 +97,22 @@ function renderKnownIssues() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderKnownIssues);
+function initStorageCalculator() {
+    const slider = document.getElementById('calc-records');
+    const out = document.getElementById('calc-records-out');
+    const gb = document.getElementById('calc-gb');
+    if (!slider || !out || !gb) return;
+
+    function update() {
+        const millions = parseFloat(slider.value);
+        const size = millions * 2; // ~2 KB per tracked record, 1M records ≈ 2 GB
+        out.textContent = (Number.isInteger(millions) ? millions : millions.toFixed(1)) + ' million';
+        gb.textContent = '≈ ' + (size < 10 ? size.toFixed(1) : Math.round(size)) + ' GB';
+    }
+
+    slider.addEventListener('input', update);
+    update();
+}
+
+document.addEventListener('DOMContentLoaded', initStorageCalculator);
+document.addEventListener('DOMContentLoaded', renderKnownIssues, );
