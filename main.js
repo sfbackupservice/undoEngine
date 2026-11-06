@@ -21,15 +21,15 @@ function goToStore() {
 }
 
 function makeOrder() {
-    window.open('https://undoengine.my.site.com/s/order', '_self');
+    window.open('https://undoengine.my.site.com/s/order', '_blank');
 }
 
 function checkUpgrade() {
-    window.open('https://undoengine.my.site.com/s/upgrade', '_self');
+    window.open('https://undoengine.my.site.com/s/upgrade', '_blank');
 }
 
 function reportIssue() {
-    window.open('https://undoengine.my.site.com/s/issues', '_self');
+    window.open('https://undoengine.my.site.com/s/issues', '_blank');
 }
 
 function loadFooter() {
