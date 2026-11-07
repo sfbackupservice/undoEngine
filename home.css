@@ -69,6 +69,7 @@ section[id] { scroll-margin-top: 70px; }
     font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .nav-cta:hover {
