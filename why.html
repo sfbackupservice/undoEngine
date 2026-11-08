@@ -15,31 +15,31 @@
             <div class="promo-image-container">
                 <img src="images/undo-promo.png" alt="Record History Viewer" class="promo-image">
             </div>
-            <h1>Why Traditional Backup Models Are Not Enough for Salesforce History</h1>
+            <h1>Why Snapshots and Change Logs Are Not Enough for Salesforce Recovery</h1>
 
-            <p>In Salesforce, data history becomes critical when something goes wrong — and the system needs to be restored to a working state as quickly as possible.</p>
-            <p>A typical incident looks like this:
-                <br>Automation updates a large number of records. Due to a logic error, the system modifies the wrong data, and business processes start to break.
-            </p>
-            <p>And this is where the limitations of traditional approaches become visible.
-                <br><br>The first is snapshot-based backups. The idea is simple: the system periodically saves its state, and in case of an issue, you restore one of these points in time.
-                <br>The problem is that real incidents never align with snapshot timing. As a result, rollback is always imprecise: you either lose valid changes that happened after the snapshot, or you retain part of the corrupted state.
+            <p>In Salesforce, data history becomes critical when something goes wrong and the system needs to be restored to a working state as quickly as possible.</p>
+            <p>A typical incident looks like this: automation updates thousands of records, a logic error changes the wrong data, and business processes start to break. This is where the limitations of traditional approaches become visible.</p>
 
-                <br><br>The second approach is change tracking and audit logging. Here the logic is different: if every change is recorded, in theory you can reconstruct any state.
-                <br>In practice, however, this often requires significant manual effort and quickly becomes an operational burden. History grows alongside the system, it needs to be constrained, carefully managed, and decisions must be made about what to track, how long to retain it, and how much storage it consumes.
-                <br><br>The core issue is that history exists, but in it does not form a unified operational layer that can be used during an incident.
-            </p>
-            <p>UndoEngine approaches this differently.
-                <br><br>Instead of treating history as an archive or a collection of logs, it builds a continuous, compact timeline of changes within the Salesforce system, with minimal and controlled storage usage.
-                <br>The key idea is that history stops being something you only inspect. It becomes a structure you can actively work with.
-                <br>You can view the full chain of changes, filter it, isolate a specific incident, and perform a point-in-time rollback — without needing to restore the entire system.
-            </p>
-            <p>And that’s the difference.
-                <br><br>Instead of restoring an entire state from a snapshot or manually reconstructing events from logs, you work only with the changes that actually caused the issue.
-                <br>UndoEngine introduces a single operational layer that allows you not just to see history, but to act on it.
+            <h2>Snapshot-based backups</h2>
+            <p>The system periodically saves its state, and if something goes wrong, you restore one of these points in time. But incidents never line up with the snapshot schedule. Restoring a snapshot in full means losing the valid changes made after it. Restoring only what broke requires comparing the snapshot with the current state, reading large volumes of data through the API, and spending time and limits on it.</p>
+            <p><strong>Strength:</strong> disaster recovery.</p>
 
-            </p>
+            <h2>Change logs where every change is a separate record</h2>
+            <p>If every change is recorded, in theory any state can be reconstructed. In practice, every change takes up a separate record in storage: 10 changes to one account produce 10 records and about 20 KB. History grows with the number of updates, so you have to limit what to track, how long to keep it and how much it costs. During an incident, such a mass of records is hard to filter and use for rollback.</p>
+            <p><strong>Strength:</strong> auditing.</p>
 
+            <h2>The UndoEngine approach</h2>
+            <p>UndoEngine builds a continuous, compact history of changes inside Salesforce. Each record gets one log of about 2 KB, regardless of how many times it changes. Storage grows with the number of tracked records, not with the number of updates: 1 million records take roughly 2 GB.</p>
+            <p>You can work with this history during an incident:</p>
+            <ul>
+                <li>filter changes by user or automation and by the time window of the incident;</li>
+                <li>preview which fields changed on which records;</li>
+                <li>roll back only the affected fields, leaving valid changes untouched;</li>
+                <li>export a CSV report of everything that was restored.</li>
+            </ul>
+            <p>In the demo, rolling back 4,000 records across 20 fields takes about 30 seconds.</p>
+            <p>The full change history is available for auditing as well.</p>
+            <p><strong>Strength:</strong> fast, precise recovery after the most common data incidents.</p>
         </div>
     </section>
 
